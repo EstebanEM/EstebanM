@@ -1,0 +1,213 @@
+@import url('https://fonts.cdnfonts.com/css/sirukota')
+
+$primary-color: #FEBA5F
+$secondary-color: #FFD7A2
+$bg-dark: #495B45
+$text-light: #ffffff
+$bg-presentacion: #983C3C
+$orange: #F84D2E
+:root 
+  --msk-time: 8s
+  --msk-color: #0cefed
+  /* --msk-tm-fnct: cubic-bezier(.79,.14,.15,.86) */
+  --msk-tm-fnct: ease-out
+
+main
+  background-image: url(/assets/img/star_wallpaper.webp)
+  background-size: cover
+  background-attachment: fixed
+  background-repeat: no-repeat
+  padding: 40px
+  .presentation
+    width: 100%
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+
+    .content-wrapper
+      display: flex
+      align-items: center
+      gap: 1rem
+      /*Titulos de precentación*/
+      .title-container
+        display: flex
+        flex-direction: column
+        align-items: center
+        color: $primary-color
+        max-width: fit-content
+        /*Titulos 'ARTE'*/
+        h1
+          text-transform: uppercase
+          font-weight: 900
+          text-shadow: 0 5px 0 $orange //Sombra Naranja
+          margin: 0.5rem 0
+          line-height: 1
+        /*Subtitulo 'Portafolio'*/
+        h3
+          display: flex
+          alingn-items: center
+          gap: 1rem
+          font-weight: 500
+          line-height: 1
+          letter-spacing: 2px
+          margin: 0.5rem 0
+          opacity: 0
+          animation: fadeUp 1s ease forwards
+          /*Lineas en los lados del h3'*/
+          &::before, &::after
+            content: ''
+            flex: 1
+            display: inline-block
+            width: 8vw
+            height: 1px
+            background: $primary-color
+            margin: 1rem
+            vertical-align: middle
+
+        #text_dinamic
+          color: $primary-color
+          font-weight: 900
+          text-transform: uppercase
+          text-shadow: 0 4px 0 $orange
+          letter-spacing: 2px
+          font-size: 39px
+          width: 100%
+          bottom: 45%
+          display: block
+
+          #flip
+            height: 50px
+            overflow: hidden
+
+            > div > div
+              color: $primary-color
+              padding: 4px 12px
+              height: 45px
+              margin-bottom: 45px
+              display: inline-block
+
+            div:first-child
+              animation: show 7s linear infinite
+
+          @keyframes show
+            0%
+              margin-top: -270px
+            5%
+              margin-top: -180px
+            33%
+              margin-top: -180px
+            38%
+              margin-top: -90px
+            66%
+              margin-top: -90px
+            71%
+              margin-top: 0px
+            99.99%
+              margin-top: 0px
+            100%
+              margin-top: -270px
+        p
+          display: flex
+          align-items: center
+          gap: 1rem
+          text-align: left
+          letter-spacing: 1px
+          line-height: 2
+
+      /*BOTÓN DE YT*/
+      .button-container
+        display: flex
+        align-items: flex-end
+        border-radius: 45px
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5))
+        margin-top: 2rem
+        opacity: 0
+        animation: fadeUp 2s ease forwards /*Aparce hacia arriba*/
+
+        .yt-avatar-button
+          width: 65%
+          height: auto
+          cursor: pointer
+        .yt-arrow-button
+          position: absolute
+          top: 80%
+          left: 75%
+          transform: translate(10px, 20px)
+          width: 20%
+          height: auto
+          transform: rotate(-20deg)
+          z-index: 1
+        .button-info
+          // font-family: 'Mabook', sans-serif
+          position: absolute
+          top: 60%
+          left: 80%
+          font-size: 1.2rem
+          color: $primary-color
+          text-align: left
+
+      @keyframes fadeUp
+        from
+          opacity: 0
+          transform: translateY(30px)
+        to
+          opacity: 1
+          transform: translateY(0)
+
+  // RESPONSIVE — tablet
+  @media (max-width: 768px)
+    .presentation
+      padding: 4rem
+
+      .content-wrapper
+        flex-direction: column
+        gap: 3rem
+
+        .title-container
+          h1
+            font-size: 5rem
+          h3
+            font-size: 1.8rem
+          h2
+            font-size: 2.5rem
+          #flip
+            height: 2.5rem
+
+  // RESPONSIVE — mobile
+  @media (max-width: 480px)
+    .presentation
+      padding: 3rem
+
+      .content-wrapper
+        flex-direction: column
+        gap: 1rem
+        .title-container
+          h1
+            font-size: 4rem
+          h3
+            font-size: 1.4rem
+          h2
+            font-size: 2rem
+          p
+            font-size: 1rem
+          #flip
+            height: 3rem
+        .button-container
+          display: flex
+          align-items: center
+          margin-top: 1rem
+          .yt-avatar-button
+            width: 60%
+            height: auto
+            cursor: pointer
+          .yt-arrow-button
+            position: absolute
+            left: 69%
+          .button-info
+            position: absolute
+            top: 65%
+            left: 85%
+            font-size: 10PX
+            

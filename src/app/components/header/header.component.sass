@@ -1,0 +1,87 @@
+@import url('https://fonts.cdnfonts.com/css/mabook')
+$primary-color: #FEBA5F
+$secondary-color: #FFD7A2
+$bg-dark: #495B45
+$text-light: #ffffff
+$bg-presentacion: #983C3C
+$orange: #F84D2E
+
+.header
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  padding: 1rem 2rem
+  background: rgba(0, 0, 0, 0.3)
+  backdrop-filter: blur(10px)
+  -webkit-backdrop-filter: blur(10px)
+  z-index: 10
+
+  .header-container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    max-width: 1200px
+    margin: 0 auto
+
+    .logo
+      display: flex
+      align-items: center
+      gap: 1rem
+
+      img
+        width: 50px
+        height: auto
+
+      p
+        color: $primary-color
+        text-align: left
+        letter-spacing: 1px
+
+    .nav
+      ul
+        display: flex
+        align-items: center
+        list-style: none
+        margin: 0
+        padding: 0
+        gap: 1rem
+
+        li
+          a
+            color: $primary-color
+            text-decoration: none
+            border: 1px solid $primary-color
+            padding: 0.5rem 1rem
+            border-radius: 5px
+            font-weight: 600
+            display: flex
+            align-items: center
+            gap: 8px
+            transition: background-color 0.3s ease
+
+            &:hover
+              background: $bg-presentacion
+
+            .texto-contacto
+              display: inline
+
+// 👌 Media query BIEN UBICADA AL FINAL
+@media (max-width: 600px)
+  .header-container
+    .logo
+      display: flex
+      align-items: center
+      gap: 1rem
+
+      img
+        width: 20px
+        height: auto
+
+      p
+        font-size: 1rem
+        letter-spacing: 1px
+        
+                                                
+
+
