@@ -1,0 +1,62 @@
+/* Variables globales */
+$primary-color: #FEBA5F
+$secondary-color: #FFD7A2
+$bg-dark: #495B45
+$text-light: #ffffff
+$bg-presentacion: #983C3C
+$orange: #F84D2E
+
+.main-footer
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 1.5rem 2rem
+  color: $secondary-color
+
+  .footer-section
+    &.left, &.right
+      flex: 1
+      p
+        margin: 0
+        font-size: .9rem
+
+    &.center
+      flex: 1
+      display: flex
+      justify-content: center
+      gap: 1.5rem
+
+      .social-icon
+        display: flex
+        align-items: center
+        justify-content: center
+        text-decoration: none
+        transition: transform .3s ease
+
+        svg
+          width: 35px
+          height: 35px
+          transition: fill .3s ease
+
+          path
+            transition: fill .3s ease
+
+        &:hover svg path
+          fill: darken($primary-color, 15%)
+
+        &:hover
+          transform: scale(1.1)
+
+  /* Responsivo */
+  @media (max-width: 768px)
+    flex-direction: column
+    text-align: center
+    gap: 1rem
+
+    .footer-section
+      &.left, &.right, &.center
+        flex: none
+
+      &.center
+        flex-wrap: wrap
+        gap: 1rem

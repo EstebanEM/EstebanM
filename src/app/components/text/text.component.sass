@@ -1,0 +1,39 @@
+p
+  text-align: center
+  text-transform: uppercase
+  padding: 20px
+
+  span
+    font-size: 4rem
+    font-weight: bold
+
+    // Clip Background Image
+    background: url(https://i.pinimg.com/1200x/04/b3/b8/04b3b8d5a736713b6a3caa3504797410.jpg) repeat-y
+    -webkit-background-clip: text
+    background-clip: text
+
+    // Animate Background Image
+    -webkit-text-fill-color: transparent
+    -webkit-animation: aitf 20s linear infinite
+
+    // Activate hardware acceleration for smoother animations
+    -webkit-transform: translate3d(0,0,0)
+    -webkit-backface-visibility: hidden
+
+  @-webkit-keyframes aitf
+    0%
+      background-position: 0% 50%
+    100%
+      background-position: 100% 50%
+
+// Responsive: pantallas medianas
+@media screen and (max-width: 768px)
+  p
+    span
+      font-size: 3rem
+
+// Responsive: pantallas pequeñas (móviles)
+@media screen and (max-width: 480px)
+  p
+    span
+      font-size: 2rem
