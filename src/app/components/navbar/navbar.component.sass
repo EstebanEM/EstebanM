@@ -11,6 +11,7 @@ $orange: #F84D2E
 main
   background-size: cover
   background-attachment: fixed
+  background-position: center
   background-repeat: no-repeat
   padding: 40px
   .presentation
@@ -103,13 +104,56 @@ main
               margin-top: 0px
             100%
               margin-top: -270px
+        /* Saludo y CARITA FELIZ*/      
         p
-          display: flex
-          align-items: center
-          gap: 1rem
-          text-align: left
-          letter-spacing: 1px
-          line-height: 2
+            display: flex
+            align-items: center
+            gap: 1rem
+            text-align: left
+            letter-spacing: 1px
+            line-height: 2
+            svg.mask
+                width: 65px
+                height: auto
+                display: inline-block
+                filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5))
+            .cl
+                stroke: $orange
+                stroke-linecap: round
+
+            .cl:nth-child(1),
+            .cl:nth-child(2)
+                stroke-dasharray: 50
+                stroke-dashoffset: -50
+                animation: M1 8s ease-out infinite
+            .cl:nth-child(2)
+                 animation-delay: 0.25s
+            .cl:nth-child(3)
+                stroke-dasharray: 170
+                stroke-dashoffset: -170
+                animation: M1-2 8s ease-out infinite
+                animation-delay: 0.5s
+
+        @keyframes M1
+            0%
+                stroke-dashoffset: 50
+                stroke-width: 2
+            15%, 85%
+                stroke-dashoffset: 0
+                stroke-width: 16
+            100%
+                stroke-dashoffset: -50
+                stroke-width: 2
+
+        @keyframes M1-2
+            0%
+                stroke-dashoffset: 170
+                stroke-width: 4
+            15%, 85%
+                stroke-dashoffset: 0
+                stroke-width: 16
+            100%
+                stroke-dashoffset: -170
 
       /*BOTÓN DE YT*/
       .button-container
@@ -130,11 +174,10 @@ main
           top: 80%
           left: 75%
           transform: translate(10px, 20px)
-          
           transform: rotate(-20deg)
           z-index: 1
         .button-info
-          // font-family: 'Mabook', sans-serif
+          filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5))
           position: absolute
           top: 60%
           left: 80%
@@ -198,10 +241,12 @@ main
             cursor: pointer
           .yt-arrow-button
             position: absolute
-            left: 69%
+            width: 55px
+            height: 40px
+            left: 71%
           .button-info
             position: absolute
-            top: 65%
-            left: 85%
-            font-size: 10PX
+            top: 50%
+            left: 79%
+            font-size: 1rem
             

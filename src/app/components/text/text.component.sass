@@ -1,11 +1,17 @@
 p
+  display: flex
+  justify-content: center
+  gap: 10px
   text-align: center
+  align-items: center
   text-transform: uppercase
   padding: 20px
 
   span
-    font-size: 4rem
-    font-weight: bold
+    font-family: "Lexend Zetta", sans-serif
+    font-size: 38px
+    font-weight: 700
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5))
 
     // Clip Background Image
     background: url(https://i.pinimg.com/1200x/04/b3/b8/04b3b8d5a736713b6a3caa3504797410.jpg) repeat-y
@@ -30,10 +36,10 @@ p
 @media screen and (max-width: 768px)
   p
     span
-      font-size: 3rem
+      font-size: 2rem
 
 // Responsive: pantallas pequeñas (móviles)
 @media screen and (max-width: 480px)
   p
     span
-      font-size: 2rem
+      font-size: 25px
