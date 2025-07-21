@@ -24,7 +24,9 @@ main
 
     .content-wrapper
       display: flex
+      justify-content: center
       align-items: center
+      text-align: center
       gap: 1rem
       /*Titulos de precentación*/
       .title-container
@@ -33,34 +35,37 @@ main
         align-items: center
         color: $primary-color
         max-width: fit-content
+        max-width: 600px
+        width: 100%
         /*Titulos 'ARTE'*/
         h1
+          font-family: 'Peteroy', sans-serif 
           text-transform: uppercase
           font-weight: 900
-          text-shadow: 0 5px 0 $orange //Sombra Naranja
+          text-shadow: 0 8px 0 $orange //Sombra Naranja
           margin: 0.5rem 0
           line-height: 1
         /*Subtitulo 'Portafolio'*/
-        h3
-          display: flex
-          alingn-items: center
-          gap: 1rem
-          font-weight: 500
-          line-height: 1
-          letter-spacing: 2px
-          margin: 0.5rem 0
-          opacity: 0
-          animation: fadeUp 1s ease forwards
-          /*Lineas en los lados del h3'*/
-          &::before, &::after
-            content: ''
-            flex: 1
-            display: inline-block
-            width: 8vw
-            height: 1px
-            background: $primary-color
-            margin: 1rem
-            vertical-align: middle
+        // h3
+        //   display: flex
+        //   alingn-items: center
+        //   gap: 1rem
+        //   font-weight: 500
+        //   line-height: 1
+        //   letter-spacing: 2px
+        //   margin: 0.5rem 0
+        //   opacity: 0
+        //   animation: fadeUp 1s ease forwards
+        //   /*Lineas en los lados del h3'*/
+        //   &::before, &::after
+        //     content: ''
+        //     flex: 1
+        //     display: inline-block
+        //     width: 8vw
+        //     height: 1px
+        //     background: $primary-color
+        //     margin: 1rem
+        //     vertical-align: middle
 
         #text_dinamic
           color: $primary-color
@@ -107,15 +112,20 @@ main
         /* Saludo y CARITA FELIZ*/      
         p
             display: flex
+            position: relative
             align-items: center
             gap: 1rem
             text-align: left
             letter-spacing: 1px
-            line-height: 2
+            line-height: 1.4
+            opacity: 0
+            animation: sliderInLeft 1s ease-out forwards
+            animation-delay: 0.5s
             svg.mask
-                width: 65px
+                position: absolute
+                left: 99%
+                width: 80px
                 height: auto
-                display: inline-block
                 filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5))
             .cl
                 stroke: $orange
@@ -133,7 +143,6 @@ main
                 stroke-dashoffset: -170
                 animation: M1-2 8s ease-out infinite
                 animation-delay: 0.5s
-
         @keyframes M1
             0%
                 stroke-dashoffset: 50
@@ -154,6 +163,13 @@ main
                 stroke-width: 16
             100%
                 stroke-dashoffset: -170
+        @keyframes sliderInLeft
+          0%
+            opacity: 0
+            transform: translateX(-100px)
+          100%
+            opacity: 1
+            transform: translateX(0)
 
       /*BOTÓN DE YT*/
       .button-container
@@ -211,6 +227,8 @@ main
             font-size: 2.5rem
           #flip
             height: 2.5rem
+          p
+            font-size: 1.2rem
 
   // RESPONSIVE — mobile
   @media (max-width: 480px)
@@ -229,6 +247,12 @@ main
             font-size: 2rem
           p
             font-size: 1rem
+            font-weight: 100
+            svg.mask
+              left: 85%
+              top: 90%
+              width: 40px
+              height: auto
           #flip
             height: 3rem
         .button-container
@@ -236,7 +260,7 @@ main
           align-items: center
           margin-top: 1rem
           .yt-avatar-button
-            width: 60%
+            width: 55%
             height: auto
             cursor: pointer
           .yt-arrow-button

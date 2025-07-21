@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './text.component.html',
   styleUrl: './text.component.sass'
 })
-export class TextComponent  {
-  
+export class TextComponent {
+
 }

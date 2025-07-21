@@ -15,11 +15,8 @@ $orange: #F84D2E
 html, body
   width: 100%
   height: 100%
-  background-size: cover
-  background-position: center
-  background-attachment: fixed
-  background-repeat: no-repeat
-  // background-color: $bg-dark /* Fondo de color verde */
+  margin: 0
+  background-color: $bg-dark /* Fondo de color verde */
   font-family: "Kumbh Sans", sans-serif
   overflow-x: hidden
   scrollbar-color: $primary-color $bg-presentacion /* Estilos para el Scroll bar*/
@@ -27,12 +24,14 @@ html, body
 body
   display: flex
   flex-direction: column
-
-h1, h2
+h1
+  font-family: 'Peteroy', sans-serif
+  letter-spacing: 2px
+h2
   font-family: "Lexend Zetta", sans-serif
   letter-spacing: 2px
 h1
-  font-size: 9rem
+  font-size: 10rem
 h2
   font-size: 3rem
 h3
@@ -42,3 +41,15 @@ p
   letter-spacing: 1px
 h3, p, ul, li, span, a
   font-family: "Kumbh Sans", sans-serif
+
+// RESPONSIVE — mobile
+@media (max-width: 480px)
+  h1
+    font-size: 5rem
+  h3
+    font-size: 1.4rem
+  h2
+    font-size: 2rem
+  p
+    font-size: 1rem
+            

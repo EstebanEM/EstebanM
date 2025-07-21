@@ -1,45 +1,124 @@
-p
+$primary-color: #FEBA5F
+$secondary-color: #FFD7A2
+$bg-dark: #495B45
+$text-light: #ffffff
+$bg-presentacion: #983C3C
+$orange: #F84D2E
+
+.text-imagination
+  position: relative
   display: flex
+  flex-direction: column
   justify-content: center
-  gap: 10px
-  text-align: center
   align-items: center
-  text-transform: uppercase
-  padding: 20px
+  text-align: center
+  width: 100%
+  padding: 40px
+  gap: 1rem
 
-  span
-    font-family: "Lexend Zetta", sans-serif
-    font-size: 38px
-    font-weight: 700
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5))
+  h2
+    color: $primary-color
+    font-family: 'Peteroy', sans-serif
+    line-height: 1.2
+    opacity: 0
+    animation: fadeUp 1s ease forwards
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    z-index: 2
+    &::before, 
+    &::after
+      content: ''
+      flex: 1
+      height: 1px
+      background: $primary-color
+      margin: 0 1rem
 
-    // Clip Background Image
-    background: url(https://i.pinimg.com/1200x/04/b3/b8/04b3b8d5a736713b6a3caa3504797410.jpg) repeat-y
-    -webkit-background-clip: text
-    background-clip: text
+  p
+    color: $secondary-color
+    font-size: 1.2rem
+    max-width: 800px
+    z-index: 2
+  
+  .img1
+    position: absolute
+    transform: rotate(40deg)
+    top: 75%
+    left: 19%
+    width: 10%
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2))
 
-    // Animate Background Image
-    -webkit-text-fill-color: transparent
-    -webkit-animation: aitf 20s linear infinite
+  .img2
+    position: absolute
+    top: 1%
+    left: 80%
+    width: 15%
+    transform: rotate(-35deg)
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2))
+  .img3
+    position: absolute
+    top: 77%
+    left: 50%
+    width: 10rem
+    transform: rotate(-35deg)
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2))
+  .img4
+    position: absolute
+    top: 0
+    left: 9%
+    width: 15%
+    transform: rotate(-35deg)
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2))
+  
 
-    // Activate hardware acceleration for smoother animations
-    -webkit-transform: translate3d(0,0,0)
-    -webkit-backface-visibility: hidden
-
-  @-webkit-keyframes aitf
-    0%
-      background-position: 0% 50%
-    100%
-      background-position: 100% 50%
+  @keyframes fadeUp
+    from
+      opacity: 0
+      transform: translateY(30px)
+    to
+      opacity: 1
+      transform: translateY(0)
 
 // Responsive: pantallas medianas
 @media screen and (max-width: 768px)
-  p
-    span
+  .text-imagination
+    padding: 30px
+    h2
       font-size: 2rem
+    p
+      font-size: 1rem
 
 // Responsive: pantallas pequeñas (móviles)
 @media screen and (max-width: 480px)
-  p
-    span
-      font-size: 25px
+  .text-imagination
+    padding: 20px
+    h2
+      font-size: 1.5rem
+    p
+      font-size: 0.95rem
+    .img1
+      position: absolute
+      top: 80%
+      left: 5%
+      width: 7rem
+      transform: rotate(-15deg)
+    .img2
+      position: absolute
+      top: 1%
+      left: 80%
+      width: 5rem
+      
+    .img3
+      position: absolute
+      top: 77%
+      left: 65%
+      width: 10rem
+      
+    .img4
+      position: absolute
+      top: 0
+      left: 9%
+      width: 5rem
+      transform: rotate(35deg)
+    

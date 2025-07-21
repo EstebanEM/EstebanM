@@ -1,40 +1,27 @@
 <app-text></app-text>
-<main class="page-content">
-  <!--Tarjetas de precentación-->
-  <!--Draw-->
-  <div class="card">
-    <div class="content">
-      <h3 class="title">DIBUJOS</h3>
-      <p class="copy">
-        Cada línea cuenta una historia, cada trazo deja huella.
-      </p>
+<!-- carousel.component.html -->
+<main class="wrapper">
+<div class="carousel">
+  <button (click)="prevSection()">⟨</button>
+
+  <div class="carousel-section">
+    <div class="info">
+      <h2>{{ sections[currentSection] }}</h2>
+      <p>Explora mis {{ sections[currentSection].toLowerCase() }}.</p>
+    </div>
+
+    <div class="card-stack">
+      <div 
+        class="card" 
+        *ngFor="let img of images[sections[currentSection]]; let i = index"
+        [ngStyle]="{ 'z-index': 3 - i }"
+        (click)="rotateCards(sections[currentSection])"
+      >
+        <img [src]="img" alt="Imagen de {{ sections[currentSection] }}">
+      </div>
     </div>
   </div>
-  <!--PAINT-->
-  <div class="card">
-    <div class="content">
-      <h3 class="title">MURALES</h3>
-      <p class="copy">
-        Paredes que hablan, colores que transforman espacios.
-      </p>
-    </div>
-  </div>
-  <!--MANUALIDADES-->
-  <div class="card">
-    <div class="content">
-      <h3 class="title">MANUALIDADES</h3>
-      <p class="copy">
-        Crear con las manos, conectar con el alma.
-      </p>
-    </div>
-  </div>
-  <!--DEVELOB-->
-  <div class="card">
-    <div class="content">
-      <h3 class="title">DESARROLLO FRONT-END</h3>
-      <p class="copy">
-        Ideas que se vuelven web, diseños que cobran vida.
-      </p>
-    </div>
-  </div>
+
+  <button (click)="nextSection()">⟩</button>
+</div>
 </main>

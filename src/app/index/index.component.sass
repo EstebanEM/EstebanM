@@ -1,133 +1,116 @@
-/* Variables */
-$primary-color: #FEBA5F
-$secondary-color: #FFD7A2
-$bg-dark: #495B45
-$text-light: #ffffff
-$bg-presentacion: #983C3C
-$orange: #F84D2E
-$bp-md: 600px
-$bp-lg: 800px
-
-:root
-  --d: 700ms
-  --e: cubic-bezier(0.19, 1, 0.22, 1)
-
-.page-content
-  display: grid
-  grid-gap: 1rem
-  padding: 1rem
-  max-width: 1024px
-  margin: 0 auto
-
-  @media (min-width: $bp-md)
-    grid-template-columns: repeat(2, 1fr)
-
-  @media (min-width: $bp-lg)
-    grid-template-columns: repeat(4, 1fr)
-
-.card
-  position: relative
+.wrapper
   display: flex
-  align-items: flex-end
-  overflow: hidden
-  border-radius: 15px
-  padding: 1rem
-  width: 100%
-  text-align: center
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
-
-  @media (min-width: 600px)
-    height: 350px
-
-  &:before
-    content: ""
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    background-size: cover
-    background-position: center
-    transition: transform calc(var(--d) * 1.5) var(--e), filter var(--d) var(--e)
-    pointer-events: none
-
-  &:after
-    content: ""
-    display: block
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 200%
-    pointer-events: none
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.79) 100%)
-    transform: translateY(-50%)
-    transition: transform calc(var(--d) * 2) var(--e)
-
-  &:nth-child(1):before
-    background-image: url(https://i.pinimg.com/736x/2a/7b/87/2a7b87b2b3096891f7b3655a4a931d0c.jpg)
-
-  &:nth-child(2):before
-    background-image: url(https://i.pinimg.com/736x/64/23/73/64237356089735183e8c81ffa5dc7436.jpg)
-
-  &:nth-child(3):before
-    background-image: url(https://i.pinimg.com/736x/4b/1f/5c/4b1f5cbeda9889838c422eb44ca5ce52.jpg)
-
-  &:nth-child(4):before
-    background-image: url(https://i.pinimg.com/1200x/86/09/8e/86098ed50a5eea7dd9d756036fe59b0b.jpg)
-
-.content
-  position: relative
-  display: flex
-  flex-direction: column
+  justify-content: center
   align-items: center
-  width: 100%
-  padding: 1rem
-  color: $secondary-color
-  transition: transform var(--d) var(--e)
-  z-index: 1
-  transform: translateY(calc(100% - 4.5rem))
+  margin: 0 auto
+  height: 100vh
+  .carousel
+    display: flex
+    justify-content: center
+    gap: 2rem
+    width: 80%
+    padding: 2rem 4rem
+    z-index: 3
+    button
+      font-size: 3rem
+      margin: 0 1rem // ← espacio horizontal alrededor del botón
+      background: none
+      border: none
+      cursor: pointer
+      color: #F84D2E
+    .carousel-section
+      display: flex
+      align-items: flex-start
+      flex-wrap: wrap
+      justify-content: space-between
+      gap: 3rem
+      width: 80%
+      z-index: 3
+      .info
+        flex: 1
+        h2
+          font-size: 3rem
+          color: #FEBA5F
+          font-family: 'Peteroy', sans-serif
+        p
+          font-size: 1.2rem
+          color: #FFD7A2
 
-  > * + *
-    margin-top: 1rem
+      .card-stack
+        position: relative
+        width: 300px
+        height: 360px
+        flex-shrink: 0
 
-  > *:not(.title)
-    opacity: 0
-    transform: translateY(1rem)
-    transition: transform var(--d) var(--e), opacity var(--d) var(--e)
+        .card
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background: #000000
+          border-radius: 12px
+          box-shadow: 0 10px 20px rgba(0,0,0,0.2)
+          cursor: pointer
+          transition: all 0.5s ease
+          overflow: hidden
+          img
+            width: 100%
+            height: 100%
+            object-fit: cover
+        // Carta superior
+      .card:nth-child(1)
+        z-index: 3
+        transform: translateY(0px) rotate(0deg)
 
-.title
-  line-height: 1.2
+      // Segunda carta, se asoma un poco
+      .card:nth-child(2)
+        z-index: 2
+        transform: translate(25px, 25px) rotate(4deg)
+        scale: 0.98
 
-.copy
-  line-height: 1.35
+      // Tercera carta, aún más abajo
+      .card:nth-child(3)
+        z-index: 1
+        transform: translate(35px, 35px) rotate(9deg)
+        scale: 0.96
+        
+@media (max-width: 768px)
+  .wrapper
+    
+    padding: 1rem
+    height: auto // para que no se corte en móviles
 
-@media (hover: hover) and (min-width: $bp-md)
-  .card
-    &:after
-      transform: translateY(0)
-
-    &:hover,
-    &:focus-within
+    .carousel
+      display: flex
       align-items: center
+      padding: 1rem
 
-      &:before
-        transform: translateY(-4%)
-        filter: brightness(0.7)
+      button
+        font-size: 2rem
+        margin: 0.5rem
+        z-index: 5
 
-      &:after
-        transform: translateY(-50%)
+      .carousel-section
+        flex-direction: column
+        align-items: center
+        width: 100%
+        gap: 2rem
 
-      .content
-        transform: translateY(0)
+        .info
+          h2
+            font-size: 2rem
+          p
+            font-size: 1rem
 
-        > *:not(.title)
-          opacity: 1
-          transform: translateY(0)
-          transition-delay: calc(var(--d) / 8)
+        .card-stack
+          width: 250px
+          height: 300px
 
-    &:focus-within:before,
-    &:focus-within:after,
-    &:focus-within .content,
-    &:focus-within .content > *:not(.title)
-      transition-duration: 0s
+@media (max-width: 480px)
+  .card-stack
+    width: 220px
+    height: 280px
+
+  .carousel button
+    font-size: 1.5rem

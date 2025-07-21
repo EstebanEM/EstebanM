@@ -12,7 +12,7 @@ $orange: #F84D2E
   left: 0
   width: 100%
   padding: 1rem 2rem
-  background: rgba(0, 0, 0, 0.3)
+  background: rgba(0, 0, 0, 0.1)
   backdrop-filter: blur(10px)
   -webkit-backdrop-filter: blur(10px)
   z-index: 10
@@ -32,11 +32,12 @@ $orange: #F84D2E
       img
         width: 50px
         height: auto
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5))
 
-      p
-        color: $primary-color
-        text-align: left
-        letter-spacing: 1px
+      // p
+      //   color: $primary-color
+      //   text-align: left
+      //   letter-spacing: 1px
 
     .nav
       ul
