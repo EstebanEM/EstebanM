@@ -1,27 +1,39 @@
 <app-text></app-text>
 <!-- carousel.component.html -->
 <main class="wrapper">
+  
 <div class="carousel">
   <button (click)="prevSection()">⟨</button>
-
   <div class="carousel-section">
-    <div class="info">
-      <h2>{{ sections[currentSection] }}</h2>
-      <p>Explora mis {{ sections[currentSection].toLowerCase() }}.</p>
-    </div>
+  <!-- INFO -->
+  <div class="info" [ngClass]="{ 'animate-info': animateInfo }">
+    <h2>{{ sections[currentSection] }}</h2>
+    <h3 class="subtitle">Mis mejores {{ sections[currentSection].toLowerCase() }}</h3>
+    <p>Explora una selección de mis {{ sections[currentSection].toLowerCase() }} destacadas. 
+      Aquí encontrarás creatividad, detalle y mucho trabajo hecho con pasión.</p>
+    <!-- Lista de detalles adicionales -->
+    <ul class="info-list">
+      <li *ngIf="sections[currentSection] === 'Dibujos'">Lápices de colores, grafito, tinta, óleo.</li>
+      <li *ngIf="sections[currentSection] === 'Manualidades'">Porcelanicrón, plastilina</li>
+      <li *ngIf="sections[currentSection] === 'Murales'">Trabajos a gran escala, vinilos, esmaltes, aerógrafos.</li>
+    </ul>
 
-    <div class="card-stack">
-      <div 
-        class="card" 
-        *ngFor="let img of images[sections[currentSection]]; let i = index"
-        [ngStyle]="{ 'z-index': 3 - i }"
-        (click)="rotateCards(sections[currentSection])"
-      >
-        <img [src]="img" alt="Imagen de {{ sections[currentSection] }}">
-      </div>
+  </div>
+
+  <!-- IMÁGENES EN PILA (CARD STACK) -->
+  <div class="card-stack">
+    <div 
+      class="card" 
+      *ngFor="let img of images[sections[currentSection]]; let i = index"
+      [ngStyle]="{ 'z-index': 10 - i }"
+      (click)="rotateCards(sections[currentSection])"
+    >
+      <img [src]="img" alt="Imagen de {{ sections[currentSection] }}">
     </div>
   </div>
 
+</div>
+<img class="img5" alr="Stiker" src="assets/img/img5.png">
   <button (click)="nextSection()">⟩</button>
 </div>
 </main>

@@ -1,4 +1,12 @@
+$primary-color: #FEBA5F
+$secondary-color: #FFD7A2
+$bg-dark: #495B45
+$text-light: #ffffff
+$bg-presentacion: #983C3C
+$orange: #F84D2E
+  
 .wrapper
+  position: relative
   display: flex
   justify-content: center
   align-items: center
@@ -28,13 +36,34 @@
       z-index: 3
       .info
         flex: 1
+
         h2
           font-size: 3rem
-          color: #FEBA5F
+          color: $primary-color
           font-family: 'Peteroy', sans-serif
+        .subtitle
+          color: $secondary-color
+          margin-bottom: 0.5rem
         p
           font-size: 1.2rem
-          color: #FFD7A2
+          color: $secondary-color
+        .info-list
+          list-style: none
+          padding: 0
+          margin: 1rem 0
+          li
+            font-size: 1rem
+            margin-bottom: 0.3rem
+            color: $secondary-color
+      @keyframes fadeSlideIn
+        0%
+          opacity: 0
+          transform: translateY(20px)
+        100%
+          opacity: 1
+          transform: translateY(0)
+      .animate-info
+        animation: fadeSlideIn 0.7s ease forwards
 
       .card-stack
         position: relative
@@ -74,11 +103,24 @@
         z-index: 1
         transform: translate(35px, 35px) rotate(9deg)
         scale: 0.96
+
+      .card:nth-child(4)
+        z-index: 1
+        transform: translate(25px, 25px) rotate(-10deg)
+        scale: 0.96
+  .img5
+    position: absolute
+    bottom: 0
+    right: 45px
+    width: 150px
+    height: auto
+    transform: rotate(15deg)
+    z-index: 1
+    opacity: 0.5
         
 @media (max-width: 768px)
   .wrapper
-    
-    padding: 1rem
+    padding: 40px
     height: auto // para que no se corte en móviles
 
     .carousel
@@ -87,7 +129,7 @@
       padding: 1rem
 
       button
-        font-size: 2rem
+        font-size: 4rem
         margin: 0.5rem
         z-index: 5
 
@@ -99,18 +141,72 @@
 
         .info
           h2
-            font-size: 2rem
+            font-size: 3rem
           p
-            font-size: 1rem
+            font-size: 1.3rem
 
         .card-stack
           width: 250px
           height: 300px
 
 @media (max-width: 480px)
-  .card-stack
-    width: 220px
-    height: 280px
+  .wrapper
+    padding: 1.5rem
+    height: auto // Evita que se corte
+    flex-direction: column // Por si se mezcla con más contenido
 
-  .carousel button
-    font-size: 1.5rem
+    .carousel
+    
+      align-items: center
+      justify-content: center
+      width: 100%
+      padding: 1rem 0
+      gap: 2rem // Espacio entre botón y contenido
+
+      button
+        font-size: 2.5rem
+        margin: 1rem 0
+        z-index: 5
+        padding: 0.5rem 1rem // Mejora el espacio táctil
+        line-height: 1
+
+      .carousel-section
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        width: 100%
+        gap: 2rem // Más espacio entre info y cards
+
+        .info
+          text-align: center
+          padding: 0 1rem
+
+          h2
+            font-size: 24px
+            margin-bottom: 0.5rem
+          .subtitle
+            text-align: left
+            font-size: 15px
+            margin-bottom: 0.5rem
+          .info-list
+            list-style: none
+            text-align: left
+            padding: 0
+            margin: 1rem 0
+            li
+              font-size: 1rem
+              margin-bottom: 0.3rem
+              color: $secondary-color
+          p
+            font-size: 14px
+            line-height: 1.4
+            text-align: left
+
+        .card-stack
+          width: 180px
+          height: 260px
+    .img5
+      bottom: 0
+      left: 75%
+      width: 100px
+      height: auto
