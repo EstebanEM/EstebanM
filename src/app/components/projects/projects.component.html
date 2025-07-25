@@ -1,0 +1,68 @@
+<h2 class="titulo-proyectos">Universos Visuales</h2>
+<section class="proyectos-section"> 
+    <!-- Diseño Web -->
+    <div class="work-content">
+      <div class="work-container">
+        <div>
+          <img src="assets/img/design.png" alt="Imagen_UI/UX" class="work-img">
+        </div>
+        <h4>Diseño UI/UX</h4>
+        <p>
+          Interfaces intuitivas, modernas y creativas.
+        </p>
+      </div>
+        <button  (click)="abrirModalUIUX()" class="btn-img-container" title="Ver más">
+          <img src="assets/img/btn-img.png" alt="Ver más" class="btn-img">
+        </button>
+    </div>
+    <!-- Modal UI/UX -->
+    <div class="modal-overlay" *ngIf="mostrarModalUIUX" (click)="cerrarModales()">
+      <div class="modal-content" (click)="$event.stopPropagation()" style="background-image: url('assets/img/star_wallpaper.webp');">
+        <span class="modal-close" (click)="cerrarModales()">×</span>
+
+        <h3 class="modal-title">Diseñador UI/UX</h3>
+
+        <ul class="modal-list">
+          <li><span class="icon">✔</span> Desarrollo de interfaz de usuario</li>
+          <li><span class="icon">✔</span> Investigación de usuarios</li>
+          <li><span class="icon">✔</span> Creaciones UX/UI interactivas</li>
+          <li><span class="icon">✔</span> Diseño responsivo</li>
+          <li><span class="icon">✔</span> Guías de marca y estilo</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Desarrollo Web -->
+    <div class="work-content">
+      <div class="work-container">
+        <div>
+          <img src="assets/img/code.png" alt="Imagen_UI/UX" class="work-img">
+        </div>
+        <h4>Desarrollo Front-End</h4>
+        <p>
+          Desarrollo sitios web modernos, funcionales y responsivos. <br>
+        </p>
+      </div>
+        <button class="btn-img-container" (click)="abrirModalWeb()" title="Ver más">
+          <img src="assets/img/btn-img.png" alt="Ver más" class="btn-img">
+        </button>
+    </div>
+    <!-- Modal Desarrollo Web -->
+    <div class="modal-overlay" *ngIf="mostrarModalWeb" (click)="cerrarModales()">
+      <div class="modal-content" (click)="$event.stopPropagation()" style="background-image: url('assets/img/star_wallpaper.webp');">
+        <span class="modal-close" (click)="cerrarModales()">×</span>
+
+        <h3 class="modal-title">Desarrollo Front-End</h3>
+
+        <ul class="modal-list">
+          <li><span class="icon">✔</span> Desarrollo de sitios web responsivos y accesibles</li>
+          <li><span class="icon">✔</span> Implementación de diseños UI en HTML, SCSS y Angular</li>
+          <li><span class="icon">✔</span> Creación de componentes reutilizables y escalables</li>
+          <li><span class="icon">✔</span> Buenas prácticas de semántica, performance y SEO técnico</li>
+        </ul>
+      </div>
+    </div>
+
+    <img src="assets/img/point.png" class="point1-img"> 
+    <img src="assets/img/point.png" class="point2-img"> 
+</section>
+

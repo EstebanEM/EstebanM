@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './text.component.sass'
 })
 export class TextComponent {
+  // videoPausado: boolean = false;
 
+  // toggleVideo(video: HTMLVideoElement): void {
+  //   if (video.paused) {
+  //     video.play();
+  //     this.videoPausado = false;
+  //   } else {
+  //     video.pause();
+  //     this.videoPausado = true;
+  //   }
+  // }
 }

@@ -1,0 +1,218 @@
+/* Variables globales */
+$primary-color: #FEBA5F
+$secondary-color: #FFD7A2
+$bg-dark: #495B45
+$text-light: #ffffff
+$bg-presentacion: #983C3C
+$orange: #F84D2E
+
+.titulo-proyectos
+    color: $primary-color
+    font-family: 'Peteroy', sans-serif
+    text-align: center
+
+.proyectos-section
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    gap: 5px
+    justify-content: center
+    padding: 40px
+    max-width: 1000px
+    margin: 0 auto
+    .work-content
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: 1rem
+        max-width: 1200px
+        margin: 0 auto
+    .work-img
+        width: 100%
+        max-width: 365px
+        background: #6d7c68
+        border: 1px solid #a8a8a8
+        border-radius: 16px
+        padding: 2rem
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3)
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        animation: float 3s ease-in-out infinite
+
+        img
+            width: 240px
+            height: auto
+            display: block
+            filter: drop-shadow(0 2px 9px rgba(0, 0, 0, 0.4))
+            border-radius: 8px
+
+    // Animación flotante
+    @keyframes float
+        0%
+            transform: translateY(0px)
+        50%
+            transform: translateY(-10px)
+        100%
+            transform: translateY(0px)
+
+    .work-container
+        width: 100%
+        height: 100%
+        max-width: 420px
+        background: #363D30FF
+        border-radius: 16px
+        padding: 2rem
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3)
+        color: $secondary-color
+        display: flex
+        flex-direction: column
+        gap: 1rem
+        overflow-wrap: break-word
+
+        h4
+            margin: 0
+            font-size: 1.1rem
+            color: $primary-color
+            font-weight: bold
+            text-transform: uppercase
+            letter-spacing: 0.5px
+
+        p
+            margin: 0
+            font-size: 0.95rem
+            line-height: 1.6
+            color: $secondary-color
+
+    .btn-img-container
+      background: none
+      border: none
+      cursor: pointer
+      display: inline-flex
+      align-items: center
+      transition: transform 0.3s ease
+      &:hover
+        transform: scale(1.05)
+    .btn-img
+      width: 75px
+      height: auto
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))
+                
+    .modal-overlay
+        position: fixed
+        top: 0
+        left: 0
+        width: 100vw
+        height: 100vh
+        background: rgba(0, 0, 0, 0.6)
+        display: flex
+        justify-content: center
+        align-items: center
+        z-index: 999
+        backdrop-filter: blur(4px)
+
+    .modal-content
+        background: $bg-presentacion
+        padding: 2rem 2.5rem
+        border-radius: 12px
+        max-width: 500px
+        width: 90%
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3)
+        animation: fadeIn 0.3s ease
+        position: relative
+
+    .modal-close
+        color: $primary-color
+        position: absolute
+        top: 1.2rem
+        right: 1.5rem
+        font-size: 1.5rem
+        font-weight: bold
+        cursor: pointer
+
+    .modal-title
+        color: $primary-color
+        text-align: center
+        font-weight: 700
+        font-size: 1.3rem
+        margin-bottom: 0.8rem
+
+    .modal-list
+        list-style: none
+        padding: 0
+        margin: 0
+        display: flex
+        flex-direction: column
+        gap: 0.8rem
+
+        li
+            color: $primary-color
+            display: flex
+            align-items: center
+            font-size: 0.95rem
+            line-height: 1.4
+
+        .icon
+            color: #27ae60
+            margin-right: 0.6rem
+            font-size: 1.1rem
+    .point1-img
+      position: absolute
+      top: 3rem
+      left: 30px
+      width: 10px
+      height: auto
+      z-index: 1
+    .point2-img
+      position: absolute
+      top: 25rem
+      right: 30px
+      width: 10px
+      height: auto
+      z-index: 1
+@media (max-width: 768px)
+  .work-content
+    padding: 1.5rem
+    gap: 1.5rem
+
+    .work-img
+      padding: 1.5rem
+
+    .work-container
+      padding: 1.5rem
+
+@media (max-width: 480px)
+  .work-img
+    max-width: 100%
+    padding: 1.2rem
+
+  .work-container
+    padding: 1.2rem
+
+    h4
+      font-size: 1rem
+
+    p
+      font-size: 14px
+    
+
+  .mockup-image
+    padding: 1rem
+
+    img
+      width: 100%
+      max-width: 260px
+
+  .mockup-info
+    bottom: -30px
+    padding: 0.9rem
+    border-radius: 10px
+
+    h4
+      font-size: 0.8rem
+
+    p
+      font-size: 0.75rem
+

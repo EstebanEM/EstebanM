@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TextComponent } from './components/text/text.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TextComponent } from './components/text/text.component';
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    TextComponent
+    TextComponent,
+    ProjectsComponent
     
   ],
   imports: [
