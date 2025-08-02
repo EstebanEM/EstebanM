@@ -288,7 +288,7 @@ $orange: #F84D2E
         grid-template-columns: 1fr
   
 
-    .project-card
+    .project-card-base
       position: relative
       border: 2px solid transparent
       border-radius: 12px
@@ -301,20 +301,10 @@ $orange: #F84D2E
       gap: 0.8rem
       color: $secondary-color
       animation: gradient-angle 4s linear infinite
-      background-image: linear-gradient(#6B3A19FF, #3A1F10FF), conic-gradient(from var(--gradient-angle),
-          #70291D 0%,
-          #F84D2E 37%,
-          #F1CC93FF 40%,
-          #F84D2E 43%,
-          #70291D  50%,
-          #70291D  70%,
-          #F84D2E 77%,
-          #F1CC93FF 80%,
-          #F84D2E 83%,
-          #70291D  90%)
       background-origin: padding-box, border-box
       background-clip: padding-box, border-box
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+
       @media (max-width: 768px)
         padding: 0.8rem
         font-size: 14px
@@ -326,80 +316,59 @@ $orange: #F84D2E
       .project-thumb
         width: 100%
         height: 160px
-        display : flex
-        justity-content: center
+        display: flex
+        justify-content: center
         align-items: center
         overflow: hidden
         border-radius: 8px
+
         img
           width: 100%
           height: 100%
           object-fit: cover
           object-position: center
+
       p
         font-size: 15px
         font-weight: 200
+
       a
-        font-weigth: bold
-    
+        font-weight: bold  // Había un typo en "font-weigth"
+
+    .project-card
+      @extend .project-card-base
+      background-image: linear-gradient(#6B3A19FF, #3A1F10FF), conic-gradient(from var(--gradient-angle),
+        #70291D 0%,
+        #F84D2E 37%,
+        #F1CC93FF 40%,
+        #F84D2E 43%,
+        #70291D  50%,
+        #70291D  70%,
+        #F84D2E 77%,
+        #F1CC93FF 80%,
+        #F84D2E 83%,
+        #70291D  90%
+      )
+
+    .project-card-2
+      @extend .project-card-base
+      background-image: linear-gradient(#634818FF, #33230BFF), conic-gradient(from var(--gradient-angle),
+        #553D13FF 0%,
+        #FEBA5F 37%,
+        #F1CC93FF 40%,
+        #FEBA5F 43%,
+        #634818FF  50%,
+        #634818FF  70%,
+        #FEBA5F 77%,
+        #F1CC93FF 80%,
+        #FEBA5F 83%,
+        #634818FF  90%
+      )
+
     @keyframes gradient-angle
       to
         --gradient-angle: 1turn
-
-    
-    .project-card-2
-      position: relative
-      border: 2px solid transparent
-      border-radius: 12px
-      padding: 1rem
-      display: flex
-      flex-direction: column
-      font-size: 1.2rem
-      letter-spacing: 1px
-      overflow-wrap: break-word
-      gap: 0.8rem
-      color: $secondary-color
-      animation: gradient-angle 4s linear infinite
-      background-image: linear-gradient(#634818FF, #33230BFF), conic-gradient(from var(--gradient-angle),
-          #553D13FF 0%,
-          #FEBA5F 37%,
-          #F1CC93FF 40%,
-          #FEBA5F 43%,
-          #634818FF  50%,
-          #634818FF  70%,
-          #FEBA5F 77%,
-          #F1CC93FF 80%,
-          #FEBA5F 83%,
-          #634818FF  90%)
-      background-origin: padding-box, border-box
-      background-clip: padding-box, border-box
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
-      @media (max-width: 768px)
-        padding: 0.8rem
-        font-size: 14px
-
-      @media (max-width: 480px)
-        padding: 0.6rem
-        font-size: 12px
-
-      .project-thumb
-        width: 100%
-        height: 160px
-        display : flex
-        justity-content: center
-        align-items: center
-        overflow: hidden
-        border-radius: 8px
-        img
-          width: 100%
-          height: 100%
-          object-fit: cover
-          object-position: center
-      p
-        font-size: 15px
-        font-weight: 200
-      a
-        font-weigth: bold  
+  
     
     @keyframes gradient-angle
       to
