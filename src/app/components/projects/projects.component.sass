@@ -6,11 +6,39 @@ $text-light: #ffffff
 $bg-presentacion: #983C3C
 $orange: #F84D2E
 
-.titulo-proyectos
-    color: $primary-color
-    font-family: 'Peteroy', sans-serif
-    text-align: center
+@layer base
+  @property --gradient-angle
+    syntax: "<angle>"
+    initial-value: 0turn
+    inherits: false
 
+.titulo-proyectos
+  color: $primary-color
+  font-family: 'Peteroy', sans-serif
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 1rem
+  line-height: 1
+  margin: 0 auto
+  padding: 1rem 0
+
+  &::before, &::after
+    content: ''
+    flex: 1
+    height: 1px
+    background: $primary-color
+    max-width: 300px
+    @media (max-width: 768px)
+      max-width: 150px
+    @media (max-width: 480px)
+      max-width: 80px 
+
+  @media (max-width: 600px)
+    .titulo-proyectos::before, .titulo-proyectos::after
+      max-width: 100px
+    
 .proyectos-section
     position: relative
     display: flex
@@ -71,6 +99,7 @@ $orange: #F84D2E
         flex-direction: column
         gap: 1rem
         overflow-wrap: break-word
+        z-index: 2
 
         h4
             margin: 0
@@ -82,137 +111,358 @@ $orange: #F84D2E
 
         p
             margin: 0
-            font-size: 0.95rem
             line-height: 1.6
             color: $secondary-color
 
-    .btn-img-container
+    .btn-1
       background: none
-      border: none
+      border: 2px solid transparent
       cursor: pointer
       display: inline-flex
       align-items: center
-      transition: transform 0.3s ease
+      font-size: 1.2rem
+      padding: 1rem
+      transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease
+      font-weight: bold
+      color: $primary-color
+      position: relative
+      z-index: 1
+      overflow: hidden
+      border-radius: 8px // Opcional si quieres esquinas suaves
+
       &:hover
-        transform: scale(1.05)
-    .btn-img
-      width: 75px
-      height: auto
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))
-                
+        background-color: rgba(112, 41, 29, 0.64)
+        border: 2px solid $orange
+        box-shadow: 1px 1px 20px $orange
+
+    .btn-2
+      background: none
+      border: 2px solid transparent
+      cursor: pointer
+      display: inline-flex
+      align-items: center
+      font-size: 1.2rem
+      padding: 1rem
+      transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease
+      font-weight: bold
+      color: $primary-color
+      position: relative
+      z-index: 1
+      overflow: hidden
+      border-radius: 8px // Opcional si quieres esquinas suaves
+
+      &:hover
+        background-color: rgba(112, 83, 29, 0.64)
+        border: 2px solid $primary-color
+        box-shadow: 1px 1px 20px $primary-color
+
+    //Modal con nuevos visualización de elementos     
     .modal-overlay
-        position: fixed
-        top: 0
-        left: 0
-        width: 100vw
-        height: 100vh
-        background: rgba(0, 0, 0, 0.6)
-        display: flex
-        justify-content: center
-        align-items: center
-        z-index: 999
-        backdrop-filter: blur(4px)
+      position: fixed
+      top: 0
+      left: 0
+      width: 100vw
+      height: 100vh
+      background: rgba(0, 0, 0, 0.4)
+      z-index: 999
+      backdrop-filter: blur(6px)
+      display: flex
+      justify-content: center
+      align-items: center
+      padding: 2rem
 
     .modal-content
-        background: $bg-presentacion
-        padding: 2rem 2.5rem
-        border-radius: 12px
-        max-width: 500px
-        width: 90%
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3)
-        animation: fadeIn 0.3s ease
-        position: relative
+      background: $bg-dark
+      border-radius: 16px
+      width: 100%
+      max-width: 1200px
+      max-height: 90vh
+      overflow-y: auto
+      -webkit-overflow-scrolling: touch
+      scrollbar-color: $primary-color transparent
+      padding: 2.5rem 3rem
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6)
+      color: $secondary-color
+      position: relative
+      animation: fadeIn 0.4s ease
+      display: flex
+      flex-direction: column
+      gap: 2rem
+    
+      @media (max-width: 768px)
+        padding: 0.8rem
+        font-size: 14px
+
+      @media (max-width: 480px)
+        padding: 0.6rem
+        font-size: 14px
 
     .modal-close
-        color: $primary-color
+        color: $secondary-color
         position: absolute
         top: 1.2rem
         right: 1.5rem
-        font-size: 1.5rem
+        font-size: 2rem
         font-weight: bold
         cursor: pointer
 
-    .modal-title
-        color: $primary-color
-        text-align: center
-        font-weight: 700
-        font-size: 1.3rem
-        margin-bottom: 0.8rem
+    .modal-header
+      display: flex
+      justify-content: space-between
+      gap: 1rem
+      flex-wrap: wrap
+      overflow-wrap: break-word
 
-    .modal-list
-        list-style: none
-        padding: 0
-        margin: 0
-        display: flex
-        flex-direction: column
-        gap: 0.8rem
+    .modal-texts
+      flex: 1 1 60%
 
-        li
-            color: $primary-color
-            display: flex
-            align-items: center
-            font-size: 0.95rem
-            line-height: 1.4
+      .modal-title
+        font-weight: bold
+        display: inline-block
+        position: relative
+        animation: stroke-reveal 1s ease-out forwards
+        animation-delay: 0.3s
+        overflow: hidden
+        
+        // margin: 0.1rem
+        // padding: 1rem
+        // border-radius: 5px
+        // background-color: rgba(112, 41, 29, 0.64) // #70291D con 64% de opacidad
+        // border: 2px solid $orange
+      @keyframes stroke-reveal
+        0%
+          clip-path: inset(0 100% 0 0)
+        100%
+          clip-path: inset(0 0 0 0) 
+      p
+        font-size: 15px
+        font-weigth: 200
+        line-height: 1.6
+        margin-bottom: 0.6rem
+        opacity: 0
+        animation: slide-in-left 0.6s ease-out forwards
+        animation-delay: 0.6s
+        &:nth-of-type(2)
+          animation-delay: 0.8s
+      @keyframes slide-in-left
+        0%
+          opacity: 0
+          transform: translateX(-30px)
+        100%
+          opacity: 1
+          transform: translateX(0)
 
-        .icon
-            color: #27ae60
-            margin-right: 0.6rem
-            font-size: 1.1rem
-    .point1-img
+    .modal-icons
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding: 1rem
+
+      img
+        width: 250px
+        height: auto
+        object-fit: cover
+        display: block
+      
+      @media (max-width: 768px)
+        padding: 0.8rem
+
+      @media (max-width: 480px)
+        padding: 0.7rem
+        img
+          width: 120px
+          height: auto
+        
+
+    .modal-projects
+      display: grid
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+      gap: 1.5rem
+
+      @media (max-width: 768px)
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))
+        gap: 1rem
+
+      @media (max-width: 480px)
+        grid-template-columns: 1fr
+  
+
+    .project-card
+      position: relative
+      border: 2px solid transparent
+      border-radius: 12px
+      padding: 1rem
+      display: flex
+      flex-direction: column
+      font-size: 1.2rem
+      letter-spacing: 1px
+      overflow-wrap: break-word
+      gap: 0.8rem
+      color: $secondary-color
+      animation: gradient-angle 4s linear infinite
+      background-image: linear-gradient(#6B3A19FF, #3A1F10FF), conic-gradient(from var(--gradient-angle),
+          #70291D 0%,
+          #F84D2E 37%,
+          #F1CC93FF 40%,
+          #F84D2E 43%,
+          #70291D  50%,
+          #70291D  70%,
+          #F84D2E 77%,
+          #F1CC93FF 80%,
+          #F84D2E 83%,
+          #70291D  90%)
+      background-origin: padding-box, border-box
+      background-clip: padding-box, border-box
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+      @media (max-width: 768px)
+        padding: 0.8rem
+        font-size: 14px
+
+      @media (max-width: 480px)
+        padding: 0.6rem
+        font-size: 12px
+
+      .project-thumb
+        width: 100%
+        height: 160px
+        display : flex
+        justity-content: center
+        align-items: center
+        overflow: hidden
+        border-radius: 8px
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          object-position: center
+      p
+        font-size: 15px
+        font-weight: 200
+      a
+        font-weigth: bold
+    
+    @keyframes gradient-angle
+      to
+        --gradient-angle: 1turn
+
+    
+    .project-card-2
+      position: relative
+      border: 2px solid transparent
+      border-radius: 12px
+      padding: 1rem
+      display: flex
+      flex-direction: column
+      font-size: 1.2rem
+      letter-spacing: 1px
+      overflow-wrap: break-word
+      gap: 0.8rem
+      color: $secondary-color
+      animation: gradient-angle 4s linear infinite
+      background-image: linear-gradient(#634818FF, #33230BFF), conic-gradient(from var(--gradient-angle),
+          #553D13FF 0%,
+          #FEBA5F 37%,
+          #F1CC93FF 40%,
+          #FEBA5F 43%,
+          #634818FF  50%,
+          #634818FF  70%,
+          #FEBA5F 77%,
+          #F1CC93FF 80%,
+          #FEBA5F 83%,
+          #634818FF  90%)
+      background-origin: padding-box, border-box
+      background-clip: padding-box, border-box
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+      @media (max-width: 768px)
+        padding: 0.8rem
+        font-size: 14px
+
+      @media (max-width: 480px)
+        padding: 0.6rem
+        font-size: 12px
+
+      .project-thumb
+        width: 100%
+        height: 160px
+        display : flex
+        justity-content: center
+        align-items: center
+        overflow: hidden
+        border-radius: 8px
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          object-position: center
+      p
+        font-size: 15px
+        font-weight: 200
+      a
+        font-weigth: bold  
+    
+    @keyframes gradient-angle
+      to
+        --gradient-angle: 1turn
+    //Imágenes de Stickers
+    .img-6, .img-8
       position: absolute
-      top: 3rem
-      left: 30px
-      width: 10px
+      width: 15rem
       height: auto
-      z-index: 1
-    .point2-img
-      position: absolute
-      top: 25rem
-      right: 30px
-      width: 10px
-      height: auto
-      z-index: 1
+      opacity: 0.5
+    .img-6
+      top: 1%
+      left: 90%
+      transform: rotate(25deg)
+    .img-8
+      top: 1%
+      left: -17%
+      transform: rotate(-45deg)
+// Medidas Responsivas
 @media (max-width: 768px)
-  .work-content
-    padding: 1.5rem
-    gap: 1.5rem
-
-    .work-img
+  .proyectos-section
+    .work-content
       padding: 1.5rem
+      gap: 1.5rem
+
+      .work-img
+        padding: 1.5rem
+
+      .work-container
+        padding: 1.5rem
+    .img-6
+      width: 15rem
+      height: auto
+      top: 35%
+      left: 70%
+    .img-8
+      width: 10rem
+      height: auto
+      top: -5%
+      left: -1%
+@media (max-width: 480px)
+  .proyectos-section
+    .work-img
+      max-width: 100%
+      padding: 1.2rem
 
     .work-container
-      padding: 1.5rem
+      padding: 1.2rem
 
-@media (max-width: 480px)
-  .work-img
-    max-width: 100%
-    padding: 1.2rem
+      h4
+        font-size: 1rem
 
-  .work-container
-    padding: 1.2rem
+      p
+        font-size: 14px
 
-    h4
-      font-size: 1rem
-
-    p
-      font-size: 14px
-    
-
-  .mockup-image
-    padding: 1rem
-
-    img
-      width: 100%
-      max-width: 260px
-
-  .mockup-info
-    bottom: -30px
-    padding: 0.9rem
-    border-radius: 10px
-
-    h4
-      font-size: 0.8rem
-
-    p
-      font-size: 0.75rem
+    .img-6
+      width: 10rem
+      height: auto
+      top: 36%
+      left: 60%
+    .img-8
+      width: 7rem
+      height: auto
+      top: -3%
+      left: -1%
 

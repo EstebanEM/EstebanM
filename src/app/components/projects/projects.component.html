@@ -1,68 +1,177 @@
-<h2 class="titulo-proyectos">Universos Visuales</h2>
-<section class="proyectos-section"> 
+<!-- Proyectos UI/UX Y PROYECTOS FRONT-END-->
+<h2 class="titulo-proyectos" id="proyectos" >PROYECTOS</h2>
+<section class="proyectos-section" > 
     <!-- Diseño Web -->
     <div class="work-content">
       <div class="work-container">
         <div>
-          <img src="assets/img/design.png" alt="Imagen_UI/UX" class="work-img">
+          <img src="assets/img/design.webp" alt="Imagen_UI/UX" class="work-img">
         </div>
         <h4>Diseño UI/UX</h4>
         <p>
           Interfaces intuitivas, modernas y creativas.
         </p>
       </div>
-        <button  (click)="abrirModalUIUX()" class="btn-img-container" title="Ver más">
-          <img src="assets/img/btn-img.png" alt="Ver más" class="btn-img">
+        <button  (click)="abrirModalUIUX()" class="btn-1" title="Ver más">
+          ver más
         </button>
     </div>
+
     <!-- Modal UI/UX -->
     <div class="modal-overlay" *ngIf="mostrarModalUIUX" (click)="cerrarModales()">
-      <div class="modal-content" (click)="$event.stopPropagation()" style="background-image: url('assets/img/star_wallpaper.webp');">
+      <div class="modal-content" (click)="$event.stopPropagation()" style="border-radius: 16px; border: 1px solid #F84D2E;">
         <span class="modal-close" (click)="cerrarModales()">×</span>
 
-        <h3 class="modal-title">Diseñador UI/UX</h3>
-
-        <ul class="modal-list">
-          <li><span class="icon">✔</span> Desarrollo de interfaz de usuario</li>
-          <li><span class="icon">✔</span> Investigación de usuarios</li>
-          <li><span class="icon">✔</span> Creaciones UX/UI interactivas</li>
-          <li><span class="icon">✔</span> Diseño responsivo</li>
-          <li><span class="icon">✔</span> Guías de marca y estilo</li>
-        </ul>
+        <div class="modal-header" style="background: #333B31; border-radius: 16px; padding: 1rem;">
+          <div class="modal-texts" >
+            <h4 style=" color: #495B45; font-size: 16px; font-weight: bold; margin: 0.5rem; ">PROYECTOS</h4>
+            <h3 class="modal-title">Diseñador UI/UX</h3>
+            <p>
+              Me apasiona diseñar experiencias que combinen tecnología y arte. Disfruto jugar con los colores, explorar tipografías y cuidar cada detalle visual para lograr interfaces funcionales y atractivas.
+            </p>
+            <p>
+              Trabajo con herramientas como <strong style="color: #F58049FF;">Figma</strong>,<strong style="color: #F58049FF;">Adobe Illustrator</strong> <strong style="color: #F58049FF;">WordPress</strong> y <strong style="color: #F58049FF;">Canva</strong>. Tengo conocimientos en teoría del color, estructura visual, wireframes, mockups y prototipos. <br> Siempre busco lograr una experiencia intuitiva y estética para el usuario.
+            </p>
+          </div>
+          <div class=" modal-icons ">
+            <img src="assets/img/design_icons.webp" alt="Figma"/>
+          </div>
+        </div>
+        <!-- Sección de proyectos-->
+        <div class="modal-projects">
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="assets/img/UX-1.webp" alt="ux-1">
+            </div>
+            <p>
+              <strong>PROARCOL</strong><br>
+              Nuestro proyecto en el SENA fue desarrollar un sistema de información para una empresa, en este caso PROARCOL, una fábrica de quesos.
+              Uno de mis grandes aportes fue el diseño y la arquitectura de la información en la interfaz, creando las diferentes visuales como Home, Blog, Login, Dashboard, Error 404 y Error 500.
+            </p>
+          </div>
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="assets/img/UX-2.webp" alt="ux-2">
+            </div>
+            <p>
+              <strong>SKANHAWK</strong> <br>
+              En SKANHAWK, uno de mis primeros proyectos profesionales fue el diseño de una plantilla informativa. El proceso de este producto incluyó el diseño de diferentes variantes en Figma y el desarrollo en HTML y CSS. El objetivo de esta plantilla es enviarse por correo; por ende, se pensó en todo para que la información se vea clara y profesional.
+            </p>
+          </div>
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="assets/img/UX-3.webp" alt="ux-3">
+            </div>
+            <p>
+              <strong>SKANHAWK</strong><br>
+              El diseño del registro de usuario para uno de los productos de SKANHAWK. Mi segundo proyecto fue el diseño de un login en Figma; la idea es que este login se vea atractivo y amigable para el usuario, combinando diferentes técnicas de diseño sin perder la creatividad e ingenio.<br>
+              <a style="text-decoration: none; color: #F84D2E; text-weight: bold;" href="https://www.ro.independence.skanhawk.com/login"><b>Ver</b></a>
+            </p>
+          </div>
+          <div class="project-card">
+            <div class="project-thumb">
+              <img src="assets/img/UX-4.webp" alt="ux-4">
+            </div>
+            <p>
+              <strong>SKANHAWK</strong> ✨<br>
+              Uno de mis proyectos más importantes fue el diseño de la página web de SKANHAWK, liderando el diseño y el desarrollo del sitio web de la empresa. Para el diseño trabajé con la herramienta Figma, realizando wireframes y mockups.<br>
+              <a style="text-decoration: none; color: #F84D2E; text-weight: bold;" href="https://skanhawk.com/"><b>Ver</b></a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
     <!-- Desarrollo Web -->
     <div class="work-content">
       <div class="work-container">
         <div>
-          <img src="assets/img/code.png" alt="Imagen_UI/UX" class="work-img">
+          <img src="assets/img/code.webp" alt="Imagen_UI/UX" class="work-img">
         </div>
         <h4>Desarrollo Front-End</h4>
         <p>
           Desarrollo sitios web modernos, funcionales y responsivos. <br>
         </p>
       </div>
-        <button class="btn-img-container" (click)="abrirModalWeb()" title="Ver más">
-          <img src="assets/img/btn-img.png" alt="Ver más" class="btn-img">
+        <button class="btn-2" (click)="abrirModalWeb()" title="Ver más">
+          Ver más
         </button>
     </div>
     <!-- Modal Desarrollo Web -->
     <div class="modal-overlay" *ngIf="mostrarModalWeb" (click)="cerrarModales()">
-      <div class="modal-content" (click)="$event.stopPropagation()" style="background-image: url('assets/img/star_wallpaper.webp');">
+      <div class="modal-content" (click)="$event.stopPropagation()" style="border-radius: 16px; border: 1px solid #FEBA5F;">
         <span class="modal-close" (click)="cerrarModales()">×</span>
 
-        <h3 class="modal-title">Desarrollo Front-End</h3>
-
-        <ul class="modal-list">
-          <li><span class="icon">✔</span> Desarrollo de sitios web responsivos y accesibles</li>
-          <li><span class="icon">✔</span> Implementación de diseños UI en HTML, SCSS y Angular</li>
-          <li><span class="icon">✔</span> Creación de componentes reutilizables y escalables</li>
-          <li><span class="icon">✔</span> Buenas prácticas de semántica, performance y SEO técnico</li>
-        </ul>
+        <div class="modal-header" style="background: #333B31; border-radius: 16px; padding: 1rem;">
+          <div class="modal-texts" >
+            <h4 style=" color: #495B45; font-size: 16px; font-weight: bold; margin: 0.5rem; ">PROYECTOS</h4>
+            <h3 class="modal-title">Desarrollo Front-End</h3>
+            <p>
+              Tengo conocimientos sólidos en <strong style="color: #FEBA5F;">HTML</strong>, <strong style="color: #FEBA5F;">CSS</strong> y <strong style="color: #FEBA5F;">JavaScript</strong>. Me gusta trabajar con el framework <strong style="color: #FEBA5F;">Angular</strong>, utilizando <strong style="color: #FEBA5F;">Sass identado</strong> para una estructura de estilos más ordenada y mantenible.
+            </p>
+            <p>
+              Además, tengo experiencia en <strong style="color: #FEBA5F;">TypeScript</strong>, modulación de proyectos y desarrollo de componentes reutilizables. Esta página está construida con Angular, aplicando buenas prácticas de documentación en el código y asegurando la escalabilidad del proyecto.
+            </p>
+          </div>
+          <div class=" modal-icons ">
+            <img src="assets/img/front_icons.webp" alt="Front" />
+          </div>
+        </div>
+        <!-- Sección de proyectos-->
+        <div class="modal-projects">
+          <div class="project-card-2">
+            <div class="project-thumb">
+              <img src="assets/img/FRONT-1.webp" alt="project-1">
+            </div>
+            <p>
+              <strong>MUNDIAL DE FUTBOL</strong><br>
+              Este proyecto fue un reto y entregable desarrollado en el <strong>SENA</strong>, donde creamos una interfaz enfocada en la temática del Mundial de Fútbol.  
+              El sistema incluye un <strong>index</strong>, un <strong>login de registro de usuario</strong> y un <strong>dashboard</strong> con un CRUD de jugadores seleccionados.  
+              Me desempeñé en el desarrollo <strong>Front-End</strong>, realizando la maquetación de las interfaces en <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>, cuidando cada detalle visual para lograr una experiencia atractiva y funcional.  
+              En la parte Back-End, se implementó el registro de usuarios utilizando <strong>Python</strong> y <strong>MySQL</strong> para la gestión de datos. Trabajé en conjunto con el equipo Back-End para asegurar la correcta integración de la interfaz con la lógica del sistema, aplicando buenas prácticas de estructura y modulación en el código.
+            </p>
+          </div>
+          <div class="project-card-2">
+            <div class="project-thumb">
+              <img src="assets/img/FRONT-2.webp" alt="project-2">
+            </div>
+            <p>
+              <strong>PROARCOL</strong><br>
+              En nuestro proyecto del SENA, desarrollamos un sistema de información para PROARCOL, una fábrica de quesos.
+              Me desempeñé en el desarrollo Front-End, participando activamente en la creación de cada uno de los elementos que conforman la interfaz de los distintos módulos.
+              Desde la maquetación con HTML, CSS y JavaScript, estuve a cargo de implementar las secciones de Home, Blog, Login, Dashboard, y las páginas de Error 404 y Error 500.
+              Aunque el proyecto fue desarrollado con Django y Python en el Back-End, trabajé en conjunto con el equipo para asegurar que la integración de las vistas fuera óptima, manteniendo una estructura de código organizada, modular y fácil de escalar.
+            </p>
+          </div>
+          <div class="project-card-2">
+            <div class="project-thumb">
+              <img src="assets/img/FRONT-3.webp" alt="project-3">
+            </div>
+            <p>
+              <strong>SKANHAWK</strong> <br>
+              En SKANHAWK, uno de mis primeros proyectos profesionales fue el diseño y desarrollo de una plantilla informativa para envíos por correo electrónico.
+              El proceso incluyó la creación de diferentes variantes en Figma, y posteriormente el desarrollo en HTML y CSS, cuidando cada detalle visual para asegurar una presentación clara y profesional.
+              Para el lanzamiento de la plantilla, implementé el consumo de APIs de envío de correo electrónico, integrando la funcionalidad mediante Python para automatizar y optimizar el proceso de distribución.
+            </p>
+          </div>
+          <div class="project-card-2">
+            <div class="project-thumb">
+              <img src="assets/img/FRONT-4.webp" alt="project-4">
+            </div>
+            <p>
+              <strong>SKANHAWK</strong> ✨<br>
+              Uno de mis proyectos más importantes fue el diseño y desarrollo de la página web de SKANHAWK, liderando tanto la parte visual como la implementación técnica del sitio.
+              Trabajé en la creación de wireframes y mockups en Figma, asegurando una estructura visual atractiva y funcional.
+              Durante el desarrollo, utilicé HTML, CSS y JavaScript, creando diferentes animaciones, componentes interactivos y estilos personalizados para lograr una apariencia profesional y dinámica.
+              Además, colaboré estrechamente con el equipo de Back-End, realizando ajustes y mejoras basadas en retroalimentación constante, garantizando una integración fluida entre el diseño y la lógica del sistema.<br>
+              <a style="text-decoration: none; color: #FEBA5F; text-weight: bold;" href="https://skanhawk.com/">Ver</a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <img src="assets/img/point.png" class="point1-img"> 
-    <img src="assets/img/point.png" class="point2-img"> 
-</section>
 
+    <img src="assets/img/img6.png" alt="Graffiti" class="img-6"> 
+    <img src="assets/img/img7.png" alt="Graffiti" class="img-8">
+</section>

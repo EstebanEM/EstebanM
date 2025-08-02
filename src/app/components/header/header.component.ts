@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.sass'
 })
 export class HeaderComponent {
+  
+  menuAbierto = false;
 
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+
+  cerrarMenu() {
+    this.menuAbierto = false;
+  }
 }
