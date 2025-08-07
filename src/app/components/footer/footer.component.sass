@@ -10,53 +10,65 @@ $orange: #F84D2E
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 1.5rem 2rem
+  padding: 2rem
   color: $secondary-color
 
   .footer-section
     &.left, &.right
       flex: 1
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      text-align: center
+      
       p
         margin: 0
-        font-size: .9rem
-
+      
     &.center
       flex: 1
       display: flex
       justify-content: center
-      gap: 1.5rem
+      gap: 2rem
+      flex-wrap: wrap
 
       .social-icon
         display: flex
         align-items: center
         justify-content: center
         text-decoration: none
-        transition: transform .3s ease
+        background-color: rgba(255,255,255,0.05)
+        padding: 0.5rem
+        border-radius: 50%
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+        transition: all .3s ease
 
         svg
           width: 35px
           height: 35px
-          transition: fill .3s ease
+          transition: transform .3s ease
 
           path
+            fill: $primary-color
             transition: fill .3s ease
-
-        &:hover svg path
-          fill: darken($primary-color, 15%)
 
         &:hover
           transform: scale(1.1)
+          background-color: lighten($primary-color, 10%)
+
+        &:hover svg path
+          fill: darken($primary-color, 15%)
 
   /* Responsivo */
   @media (max-width: 768px)
     flex-direction: column
     text-align: center
-    gap: 1rem
+    gap: 2rem
 
     .footer-section
       &.left, &.right, &.center
         flex: none
 
       &.center
-        flex-wrap: wrap
         gap: 1rem
+

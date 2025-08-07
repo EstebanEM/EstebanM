@@ -30,6 +30,9 @@ $orange: #F84D2E
 
       img
         width: 50px
+      p
+        font-weight: 600
+        color: $primary-color
 
     .menu
       display: none
@@ -69,13 +72,21 @@ $orange: #F84D2E
         li a
           color: $primary-color
           text-decoration: none
-          padding: 0.5rem 1rem
+          padding: 0.5rem
           border-radius: 5px
           font-weight: 600
           transition: background-color 0.3s ease
 
+          display: flex
+          align-items: center
+          justify-content: center
+          border: 1px solid transparent
+
           &:hover
             background: $bg-presentacion
+            border: 1px solid $primary-color
+            // svg path
+            //   fill: darken($primary-color, 10% )
 
 @media (max-width: 768px)
   .header-container

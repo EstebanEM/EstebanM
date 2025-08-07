@@ -56,11 +56,9 @@ $orange: #F84D2E
         gap: 1rem
         max-width: 1200px
         margin: 0 auto
-    .work-img
+    .work-img-1, .work-img-2
         width: 100%
         max-width: 365px
-        background: #6d7c68
-        border: 1px solid #a8a8a8
         border-radius: 16px
         padding: 2rem
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3)
@@ -69,14 +67,18 @@ $orange: #F84D2E
         justify-content: center
         align-items: center
         animation: float 3s ease-in-out infinite
-
         img
             width: 240px
             height: auto
             display: block
             filter: drop-shadow(0 2px 9px rgba(0, 0, 0, 0.4))
             border-radius: 8px
-
+    .work-img-1
+      background: radial-gradient(circle at top right, #4E2605B2, #050505FF) padding-box, linear-gradient(36deg, #585858FF, #F84D2E) border-box
+      border: 2px solid transparent
+    .work-img-2
+      background: radial-gradient(circle at top right, #573C0498, #050505FF) padding-box, linear-gradient(36deg, #464646FF, #FEBA5F) border-box
+      border: 2px solid transparent
     // Animación flotante
     @keyframes float
         0%
