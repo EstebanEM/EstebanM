@@ -4,3 +4,21 @@ $bg-dark: #495B45
 $text-light: #ffffff
 $bg-presentacion: #983C3C
 $orange: #F84D2E
+
+
+.whatsapp-float
+  display: flex
+  flex-direction: column
+  position: fixed
+  bottom: 20px
+  right: 20px
+  gap: 1rem
+  z-index: 1000
+  img
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3)
+    transition: transform 0.2s ease-in-out
+    &:hover
+      transform: scale(1.1)
