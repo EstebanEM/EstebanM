@@ -1,4 +1,6 @@
-/* Variables globales */
+// ==============================
+// Variables globales
+// ==============================
 $primary-color: #FEBA5F
 $secondary-color: #FFD7A2
 $bg-dark: #495B45
@@ -6,12 +8,14 @@ $text-light: #ffffff
 $bg-presentacion: #983C3C
 $orange: #F84D2E
 
-@layer base
-  @property --gradient-angle
-    syntax: "<angle>"
-    initial-value: 0turn
-    inherits: false
+$backend: #495B45
+$frontend: #FEBA5F
+$uiux: #F84D2E
+$graphic: #983C3C
 
+// ==============================
+// Título sección
+// ==============================
 .titulo-proyectos
   color: $primary-color
   font-family: 'Peteroy', sans-serif
@@ -24,416 +28,380 @@ $orange: #F84D2E
   margin: 0 auto
   padding: 1rem 0
 
-  &::before, &::after
+  &::before,
+  &::after
     content: ''
     flex: 1
     height: 1px
     background: $primary-color
     max-width: 300px
-    @media (max-width: 768px)
+
+  @media (max-width: 768px)
+    &::before,
+    &::after
       max-width: 150px
-    @media (max-width: 480px)
-      max-width: 80px 
 
-  @media (max-width: 600px)
-    .titulo-proyectos::before, .titulo-proyectos::after
-      max-width: 100px
-    
-.proyectos-section
+  @media (max-width: 480px)
+    &::before,
+    &::after
+      max-width: 80px
+
+// ==============================
+// Grid de proyectos
+// ==============================
+.projects
+  
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  gap: 1.5rem
+  max-width: 1100px
+  margin: 0 auto
+  padding: 3rem 1rem
+
+  @media (max-width: 1024px)
+    grid-template-columns: repeat(2, 1fr)
+
+  @media (max-width: 560px)
+    grid-template-columns: 1fr
+
+// ==============================
+// Card base
+// ==============================
+.card
+  background: rgba(54, 61, 48, 0.88)
+  border-radius: 16px
+  padding: 1.6rem 1.4rem 1.8rem
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 1rem
+  text-align: center
+  position: relative
+  overflow: hidden
+  border: 1px solid rgba(255, 255, 255, 0.06)
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35)
+  transition: transform .25s ease, box-shadow .25s ease
+
+  &:hover
+    transform: translateY(-4px)
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45)
+
+// ==============================
+// Media (imagen)
+// ==============================
+.card__media
+  width: 100%
+  height: 160px
+  border-radius: 12px
+  display: flex
+  justify-content: center
+  align-items: center
+  overflow: hidden
+
+  img
+    width: 200px
+    height: auto
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4))
+    animation: floatUp 4s ease-in-out infinite
+    will-change: transform
+
+  @keyframes floatUp
+    0%
+      transform: translateY(0)
+    50%
+      transform: translateY(-10px)
+    100%
+      transform: translateY(0)
+
+
+// ==============================
+// Título
+// ==============================
+.card__title
+  margin: .2rem 0 0
+  font-size: .95rem
+  letter-spacing: 0.8px
+  text-transform: uppercase
+  font-weight: 700
+  color: $secondary-color
+
+// ==============================
+// Botón
+// ==============================
+.card__btn
+  margin-top: .6rem
+  width: 100%
+  max-width: 200px
+  padding: .8rem 1.2rem
+  border-radius: 10px
+  background: transparent
+  font-weight: 700
+  cursor: pointer
+  border: 1px solid rgba(255, 255, 255, 0.15)
+  transition: background .2s ease, box-shadow .2s ease, color .2s ease
+
+// ==============================
+// VARIANTES POR CATEGORÍA
+// ==============================
+
+// 🟢 Back-End – sobrio y técnico
+.card--backend
+  border-bottom: 3px solid $backend
+
+  .card__btn
+    border-color: rgba($backend, .6)
+    color: $primary-color
+
+    &:hover
+      background: rgba($backend, .15)
+      box-shadow: 0 0 12px rgba($backend, .45)
+
+// 🟡 Front-End – UI moderna
+.card--frontend
+  border-bottom: 3px solid $frontend
+
+  .card__btn
+    border-color: rgba($frontend, .6)
+    color: $frontend
+
+    &:hover
+      background: rgba($frontend, .15)
+      box-shadow: 0 0 12px rgba($frontend, .45)
+
+// 🟠 UX/UI – creativo controlado
+.card--uiux
+  border-bottom: 3px solid $orange
+
+  .card__btn
+    border-color: rgba($orange, .6)
+    color: $orange
+
+    &:hover
+      background: rgba($orange, .15)
+      box-shadow: 0 0 12px rgba($orange, .45)
+
+// 🔴 Diseño Gráfico – expresivo elegante
+.card--graphic
+  border-bottom: 3px solid $bg-presentacion
+
+  .card__btn
+    border-color: rgba($bg-presentacion, .6)
+    color: lighten($bg-presentacion, 12%)
+
+    &:hover
+      background: rgba($bg-presentacion, .18)
+      box-shadow: 0 0 12px rgba($bg-presentacion, .45)
+
+
+// ==============================
+// Overlay (más limpio)
+// ==============================
+.modal-overlay
+  position: fixed
+  inset: 0
+  background: rgba(10, 10, 10, 0.6)
+  backdrop-filter: blur(8px)
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 1000
+  animation: overlayIn .25s ease forwards
+
+@keyframes overlayIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+// ==============================
+// Modal base (profundidad real)
+// ==============================
+.modal
+  background: linear-gradient(
+    180deg,
+    rgba(70, 78, 63, 0.95),
+    rgba(54, 61, 48, 0.98)
+  )
+  width: 100%
+  max-width: 1080px
+  max-height: 90vh
+  overflow-y: auto
+  border-radius: 20px
+  padding: 2.4rem 2.6rem
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.75),inset 0 1px 0 rgba(255, 255, 255, 0.04)
+  transform: translateY(12px)
+  opacity: 0
+  animation: modalIn .35s cubic-bezier(.25,.8,.25,1) forwards
+
+@keyframes modalIn
+  to
+    transform: translateY(0)
+    opacity: 1
+
+// ==============================
+// Header (jerarquía clara)
+// ==============================
+.modal__header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-bottom: 1.2rem
+  margin-bottom: 2rem
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08)
+
+.modal__subtitle
+  font-size: .7rem
+  letter-spacing: 1.6px
+  text-transform: uppercase
+  color: rgba($secondary-color, .7)
+
+.modal__title
+  margin: .2rem 0 0
+  font-size: 1.6rem
+  font-weight: 700
+  color: $primary-color
+
+.modal__close
+  background: none
+  border: none
+  font-size: 1.8rem
+  color: rgba($secondary-color, .7)
+  cursor: pointer
+  transition: transform .2s ease, color .2s ease
+
+  &:hover
+    color: $primary-color
+    transform: scale(1.1)
+
+// ==============================
+// Intro (más aire)
+// ==============================
+.modal__intro
+  display: grid
+  grid-template-columns: 1fr auto
+  gap: 3rem
+  margin-bottom: 3rem
+
+  p
+    margin: 0 0 1rem
+    line-height: 1.7
+    color: rgba($secondary-color, .9)
+    font-size: .95rem
+
+// ==============================
+// Tools (más sutil)
+// ==============================
+.modal__tools
+  display: flex
+  gap: 1rem
+  align-items: flex-start
+  padding-top: .2rem
+
+  img
+    width: 32px
+    opacity: .6
+    transition: opacity .2s ease, transform .2s ease
+
+    &:hover
+      opacity: 1
+      transform: translateY(-3px)
+
+// ==============================
+// Projects (bloques claros)
+// ==============================
+.modal__projects
+  display: flex
+  flex-direction: column
+  gap: 1.4rem
+
+// ==============================
+// Project card / accordion
+// ==============================
+.project
+  border-radius: 16px
+  background: rgba(0, 0, 0, 0.22)
+  border: 1px solid rgba(255, 255, 255, 0.06)
+  overflow: hidden
+  transition: border .25s ease, box-shadow .25s ease
+
+  &[open]
+    border-color: rgba($primary-color, .35)
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45)
+
+  summary
+    padding: 1.3rem 1.6rem
+    cursor: pointer
+    font-weight: 600
+    color: $text-light
     position: relative
-    display: flex
-    flex-wrap: wrap
-    gap: 5px
-    justify-content: center
-    padding: 40px
-    max-width: 1000px
-    margin: 0 auto
-    .work-content
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: center
-        gap: 1rem
-        max-width: 1200px
-        margin: 0 auto
-    .work-img-1, .work-img-2
-        width: 100%
-        max-width: 365px
-        border-radius: 16px
-        padding: 2rem
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3)
-        position: relative
-        display: flex
-        justify-content: center
-        align-items: center
-        animation: float 3s ease-in-out infinite
-        img
-            width: 240px
-            height: auto
-            display: block
-            filter: drop-shadow(0 2px 9px rgba(0, 0, 0, 0.4))
-            border-radius: 8px
-    .work-img-1
-      background: radial-gradient(circle at top right, #4E2605B2, #050505FF) padding-box, linear-gradient(36deg, #585858FF, #F84D2E) border-box
-      border: 2px solid transparent
-    .work-img-2
-      background: radial-gradient(circle at top right, #573C0498, #050505FF) padding-box, linear-gradient(36deg, #464646FF, #FEBA5F) border-box
-      border: 2px solid transparent
-    // Animación flotante
-    @keyframes float
-        0%
-            transform: translateY(0px)
-        50%
-            transform: translateY(-10px)
-        100%
-            transform: translateY(0px)
+    list-style: none
+    background: rgba(0, 0, 0, 0.15)
 
-    .work-container
-        width: 100%
-        height: 100%
-        max-width: 420px
-        background: #363D30FF
-        border-radius: 16px
-        padding: 2rem
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3)
-        color: $secondary-color
-        display: flex
-        flex-direction: column
-        gap: 1rem
-        overflow-wrap: break-word
-        z-index: 2
+    &::marker
+      display: none
 
-        h4
-            margin: 0
-            font-size: 1.1rem
-            color: $primary-color
-            font-weight: bold
-            text-transform: uppercase
-            letter-spacing: 0.5px
-
-        p
-            margin: 0
-            line-height: 1.6
-            color: $secondary-color
-
-    .btn-1
-      background: none
-      border: 2px solid transparent
-      cursor: pointer
-      display: inline-flex
-      align-items: center
-      font-size: 1.2rem
-      padding: 1rem
-      transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease
-      font-weight: bold
-      color: $primary-color
-      position: relative
-      z-index: 1
-      overflow: hidden
-      border-radius: 8px // Opcional si quieres esquinas suaves
-
-      &:hover
-        background-color: rgba(112, 41, 29, 0.64)
-        border: 2px solid $orange
-        box-shadow: 1px 1px 20px $orange
-
-    .btn-2
-      background: none
-      border: 2px solid transparent
-      cursor: pointer
-      display: inline-flex
-      align-items: center
-      font-size: 1.2rem
-      padding: 1rem
-      transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease
-      font-weight: bold
-      color: $primary-color
-      position: relative
-      z-index: 1
-      overflow: hidden
-      border-radius: 8px // Opcional si quieres esquinas suaves
-
-      &:hover
-        background-color: rgba(112, 83, 29, 0.64)
-        border: 2px solid $primary-color
-        box-shadow: 1px 1px 20px $primary-color
-
-    //Modal con nuevos visualización de elementos     
-    .modal-overlay
-      position: fixed
-      top: 0
-      left: 0
-      width: 100vw
-      height: 100vh
-      background: rgba(0, 0, 0, 0.4)
-      z-index: 999
-      backdrop-filter: blur(6px)
-      display: flex
-      justify-content: center
-      align-items: center
-      padding: 2rem
-
-    .modal-content
-      background: $bg-dark
-      border-radius: 16px
-      width: 100%
-      max-width: 1200px
-      max-height: 90vh
-      overflow-y: auto
-      -webkit-overflow-scrolling: touch
-      scrollbar-color: $primary-color transparent
-      padding: 2.5rem 3rem
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6)
-      color: $secondary-color
-      position: relative
-      animation: fadeIn 0.4s ease
-      display: flex
-      flex-direction: column
-      gap: 2rem
-    
-      @media (max-width: 768px)
-        padding: 0.8rem
-        font-size: 14px
-
-      @media (max-width: 480px)
-        padding: 0.6rem
-        font-size: 14px
-
-    .modal-close
-        color: $secondary-color
-        position: absolute
-        top: 1.2rem
-        right: 1.5rem
-        font-size: 2rem
-        font-weight: bold
-        cursor: pointer
-
-    .modal-header
-      display: flex
-      justify-content: space-between
-      gap: 1rem
-      flex-wrap: wrap
-      overflow-wrap: break-word
-
-    .modal-texts
-      flex: 1 1 60%
-
-      .modal-title
-        font-weight: bold
-        display: inline-block
-        position: relative
-        animation: stroke-reveal 1s ease-out forwards
-        animation-delay: 0.3s
-        overflow: hidden
-        
-        // margin: 0.1rem
-        // padding: 1rem
-        // border-radius: 5px
-        // background-color: rgba(112, 41, 29, 0.64) // #70291D con 64% de opacidad
-        // border: 2px solid $orange
-      @keyframes stroke-reveal
-        0%
-          clip-path: inset(0 100% 0 0)
-        100%
-          clip-path: inset(0 0 0 0) 
-      p
-        font-size: 15px
-        font-weigth: 200
-        line-height: 1.6
-        margin-bottom: 0.6rem
-        opacity: 0
-        animation: slide-in-left 0.6s ease-out forwards
-        animation-delay: 0.6s
-        &:nth-of-type(2)
-          animation-delay: 0.8s
-      @keyframes slide-in-left
-        0%
-          opacity: 0
-          transform: translateX(-30px)
-        100%
-          opacity: 1
-          transform: translateX(0)
-
-    .modal-icons
-      display: flex
-      flex-direction: column
-      justify-content: center
-      align-items: center
-      padding: 1rem
-
-      img
-        width: 250px
-        height: auto
-        object-fit: cover
-        display: block
-      
-      @media (max-width: 768px)
-        padding: 0.8rem
-
-      @media (max-width: 480px)
-        padding: 0.7rem
-        img
-          width: 120px
-          height: auto
-        
-
-    .modal-projects
-      display: grid
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
-      gap: 1.5rem
-
-      @media (max-width: 768px)
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))
-        gap: 1rem
-
-      @media (max-width: 480px)
-        grid-template-columns: 1fr
-  
-
-    .project-card-base
-      position: relative
-      border: 2px solid transparent
-      border-radius: 12px
-      padding: 1rem
-      display: flex
-      flex-direction: column
-      font-size: 1.2rem
-      letter-spacing: 1px
-      overflow-wrap: break-word
-      gap: 0.8rem
-      color: $secondary-color
-      animation: gradient-angle 4s linear infinite
-      background-origin: padding-box, border-box
-      background-clip: padding-box, border-box
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
-
-      @media (max-width: 768px)
-        padding: 0.8rem
-        font-size: 14px
-
-      @media (max-width: 480px)
-        padding: 0.6rem
-        font-size: 12px
-
-      .project-thumb
-        width: 100%
-        height: 160px
-        display: flex
-        justify-content: center
-        align-items: center
-        overflow: hidden
-        border-radius: 8px
-
-        img
-          width: 100%
-          height: 100%
-          object-fit: cover
-          object-position: center
-
-      p
-        font-size: 15px
-        font-weight: 200
-
-      a
-        font-weight: bold  // Había un typo en "font-weigth"
-
-    .project-card
-      @extend .project-card-base
-      background-image: linear-gradient(#6B3A19FF, #3A1F10FF), conic-gradient(from var(--gradient-angle),
-        #70291D 0%,
-        #F84D2E 37%,
-        #F1CC93FF 40%,
-        #F84D2E 43%,
-        #70291D  50%,
-        #70291D  70%,
-        #F84D2E 77%,
-        #F1CC93FF 80%,
-        #F84D2E 83%,
-        #70291D  90%
-      )
-
-    .project-card-2
-      @extend .project-card-base
-      background-image: linear-gradient(#634818FF, #33230BFF), conic-gradient(from var(--gradient-angle),
-        #553D13FF 0%,
-        #FEBA5F 37%,
-        #F1CC93FF 40%,
-        #FEBA5F 43%,
-        #634818FF  50%,
-        #634818FF  70%,
-        #FEBA5F 77%,
-        #F1CC93FF 80%,
-        #FEBA5F 83%,
-        #634818FF  90%
-      )
-
-    @keyframes gradient-angle
-      to
-        --gradient-angle: 1turn
-  
-    
-    @keyframes gradient-angle
-      to
-        --gradient-angle: 1turn
-    //Imágenes de Stickers
-    .img-6, .img-8
+    &::after
+      content: '▸'
       position: absolute
-      width: 15rem
-      height: auto
-      opacity: 0.5
-    .img-6
-      top: 1%
-      left: 90%
-      transform: rotate(25deg)
-    .img-8
-      top: 1%
-      left: -17%
-      transform: rotate(-45deg)
-// Medidas Responsivas
-@media (max-width: 768px)
-  .proyectos-section
-    .work-content
-      padding: 1.5rem
-      gap: 1.5rem
+      right: 1.6rem
+      top: 50%
+      transform: translateY(-50%)
+      transition: transform .25s ease
 
-      .work-img
-        padding: 1.5rem
+  &[open] summary::after
+    transform: translateY(-50%) rotate(90deg)
 
-      .work-container
-        padding: 1.5rem
-    .img-6
-      width: 15rem
-      height: auto
-      top: 35%
-      left: 70%
-    .img-8
-      width: 10rem
-      height: auto
-      top: -5%
-      left: -1%
-@media (max-width: 480px)
-  .proyectos-section
-    .work-img
-      max-width: 100%
-      padding: 1.2rem
+// ==============================
+// Project content
+// ==============================
+.project__content
+  padding: 1.6rem 1.6rem 1.8rem
+  animation: contentIn .25s ease
 
-    .work-container
-      padding: 1.2rem
+@keyframes contentIn
+  from
+    opacity: 0
+    transform: translateY(-4px)
+  to
+    opacity: 1
+    transform: translateY(0)
 
-      h4
-        font-size: 1rem
+// ==============================
+// Actions (jerarquía clara)
+// ==============================
+.project__actions
+  display: flex
+  flex-wrap: wrap
+  gap: .8rem
+  margin-top: 1.4rem
 
-      p
-        font-size: 14px
+  a
+    padding: .6rem 1.3rem
+    border-radius: 999px
+    font-size: .85rem
+    font-weight: 600
+    border: 1px solid rgba($primary-color, .6)
+    color: $primary-color
+    text-decoration: none
+    transition: background .2s ease, box-shadow .2s ease, transform .2s ease
 
-    .img-6
-      width: 10rem
-      height: auto
-      top: 36%
-      left: 60%
-    .img-8
-      width: 7rem
-      height: auto
-      top: -3%
-      left: -1%
+    &:hover
+      background: rgba($primary-color, .15)
+      box-shadow: 0 6px 16px rgba($primary-color, .35)
+      transform: translateY(-2px)
+
+// ==============================
+// Variantes por área (sutiles)
+// ==============================
+.modal--backend
+  border-top: 3px solid rgba($backend, .9)
+
+.modal--frontend
+  border-top: 3px solid rgba($frontend, .9)
+
+.modal--uiux
+  border-top: 3px solid rgba($orange, .9)
+
+.modal--graphic
+  border-top: 3px solid rgba($bg-presentacion, .9)
 

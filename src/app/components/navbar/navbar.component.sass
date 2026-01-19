@@ -350,4 +350,120 @@ main
             top: 50%
             left: 79%
             font-size: 1rem
-            
+
+.site-header
+  position: relative
+  width: 100%
+
+  .skills-bar
+    bottom: 0
+    left: 0
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 0
+
+    background: rgba(0, 0, 0, 0.44)
+    backdrop-filter: blur(14px)
+    -webkit-backdrop-filter: blur(14px)
+    z-index: 4
+
+    .skill-item
+      position: relative
+      padding: 1.2rem 1rem
+      color: #FFD7A29A
+      transition: background 0.3s ease
+
+      &:hover
+        background: rgba(255, 255, 255, 0.05)
+
+      &:not(:last-child)::after
+        content: ''
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 1px
+        height: 65%
+        background: #FFD7A23A
+
+      .skill-layout
+        display: flex
+        align-items: flex-start
+        gap: 1rem
+
+      .skill-icon
+        width: 42px
+        height: 42px
+        flex-shrink: 0
+        opacity: 0.85
+        filter: drop-shadow(0 0 6px rgba(0,0,0,0.4))
+        transition: transform 0.3s ease, opacity 0.3s ease
+
+      &:hover .skill-icon
+        transform: scale(1.08)
+        opacity: 1
+
+      .skill-content
+        display: flex
+        flex-direction: column
+        gap: 0.4rem
+
+        h4
+          text-transform: uppercase
+          margin: 0
+
+        p
+          font-size: 0.75rem
+          line-height: 1.4
+          opacity: 0.85
+          margin: 0
+
+    // ===== Angular special layout =====
+    .skill-item.skill-angular
+      .skill-layout
+        align-items: center
+
+      .skill-title-vertical
+        writing-mode: vertical-rl
+        text-orientation: mixed
+        transform: rotate(180deg)
+        font-size: 0.8rem
+        letter-spacing: 2px
+        text-transform: uppercase
+        opacity: 0.8
+        margin: 0 0.5rem
+        white-space: nowrap
+
+@media (max-width: 768px)
+  .site-header
+    .skills-bar
+      grid-template-columns: repeat(2, 1fr)
+
+      .skill-item
+        &:not(:last-child)::after
+          display: none
+
+@media (max-width: 480px)
+  .site-header
+    .skills-bar
+      grid-template-columns: 1fr
+
+      .skill-layout
+        align-items: center
+
+      .skill-icon
+        width: 36px
+        height: 36px
+
+      .skill-content
+        p
+          font-size: 0.7rem
+
+      .skill-item.skill-angular
+        .skill-title-vertical
+          writing-mode: horizontal-tb
+          transform: none
+          margin: 0
+          font-size: 0.85rem
+

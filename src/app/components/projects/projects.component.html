@@ -1,177 +1,849 @@
-<!-- Proyectos UI/UX Y PROYECTOS FRONT-END-->
+<!-- Proyectos-->
 <h2 class="titulo-proyectos" id="proyectos" >PROYECTOS</h2>
-<section class="proyectos-section" > 
-    <!-- Diseño Web -->
-    <div class="work-content">
-      <div class="work-container">
-        <div>
-          <img src="assets/img/design.webp" alt="Imagen_UI/UX" class="work-img-1">
-        </div>
-        <h4>Diseño UI/UX</h4>
-        <p>
-          Interfaces intuitivas, modernas y creativas.
-        </p>
-      </div>
-        <button  (click)="abrirModalUIUX()" class="btn-1" title="Ver más">
-          ver más
-        </button>
+
+<section class="projects">
+  <article class="card card--backend">
+    <div class="card__media">
+      <img src="assets/img/code.webp" alt="Back-End" />
     </div>
+    <h4 class="card__title">Back-End</h4>
+    <button class="card__btn" (click)="openModal('backend')">Ver más</button>
+  </article>
 
-    <!-- Modal UI/UX -->
-    <div class="modal-overlay" *ngIf="mostrarModalUIUX" (click)="cerrarModales()">
-      <div class="modal-content" (click)="$event.stopPropagation()" style="border-radius: 16px; border: 1px solid #F84D2E;">
-        <span class="modal-close" (click)="cerrarModales()">×</span>
-
-        <div class="modal-header" style="background: #333B31; border-radius: 16px; padding: 1rem;">
-          <div class="modal-texts" >
-            <h4 style=" color: #495B45; font-size: 16px; font-weight: bold; margin: 0.5rem; ">PROYECTOS</h4>
-            <h3 class="modal-title">Diseñador UI/UX</h3>
-            <p>
-              Me apasiona diseñar experiencias que combinen tecnología y arte. Disfruto jugar con los colores, explorar tipografías y cuidar cada detalle visual para lograr interfaces funcionales y atractivas.
-            </p>
-            <p>
-              Trabajo con herramientas como <strong style="color: #F58049FF;">Figma</strong>, <strong style="color: #F58049FF;">Adobe Illustrator</strong>, <strong style="color: #F58049FF;">WordPress</strong> y <strong style="color: #F58049FF;">Canva</strong>. Tengo conocimientos en teoría del color, estructura visual, wireframes, mockups y prototipos. <br> Siempre busco lograr una experiencia intuitiva y estética para el usuario.
-            </p>
-          </div>
-          <div class=" modal-icons ">
-            <img src="assets/img/design_icons.webp" alt="Figma"/>
-          </div>
-        </div>
-        <!-- Sección de proyectos-->
-        <div class="modal-projects">
-          <div class="project-card">
-            <div class="project-thumb">
-              <img src="assets/img/UX-1.webp" alt="ux-1">
-            </div>
-            <p>
-              <strong>PROARCOL</strong><br>
-              Nuestro proyecto en el SENA fue desarrollar un sistema de información para una empresa, en este caso PROARCOL, una fábrica de quesos.
-              Uno de mis grandes aportes fue el diseño y la arquitectura de la información en la interfaz, creando las diferentes visuales como Home, Blog, Login, Dashboard, Error 404 y Error 500.
-            </p>
-          </div>
-          <div class="project-card">
-            <div class="project-thumb">
-              <img src="assets/img/UX-2.webp" alt="ux-2">
-            </div>
-            <p>
-              <strong>SKANHAWK</strong> <br>
-              En SKANHAWK, uno de mis primeros proyectos profesionales fue el diseño de una plantilla informativa. El proceso de este producto incluyó el diseño de diferentes variantes en Figma y el desarrollo en HTML y CSS. El objetivo de esta plantilla es enviarse por correo; por ende, se pensó en todo para que la información se vea clara y profesional.
-            </p>
-          </div>
-          <div class="project-card">
-            <div class="project-thumb">
-              <img src="assets/img/UX-3.webp" alt="ux-3">
-            </div>
-            <p>
-              <strong>SKANHAWK</strong><br>
-              El diseño del registro de usuario para uno de los productos de SKANHAWK. Mi segundo proyecto fue el diseño de un login en Figma; la idea es que este login se vea atractivo y amigable para el usuario, combinando diferentes técnicas de diseño sin perder la creatividad e ingenio.<br>
-              <a style="text-decoration: none; color: #F84D2E; text-weight: bold;" href="https://www.ro.independence.skanhawk.com/login"><b>Ver</b></a>
-            </p>
-          </div>
-          <div class="project-card">
-            <div class="project-thumb">
-              <img src="assets/img/UX-4.webp" alt="ux-4">
-            </div>
-            <p>
-              <strong>SKANHAWK</strong> ✨<br>
-              Uno de mis proyectos más importantes fue el diseño de la página web de SKANHAWK, liderando el diseño y el desarrollo del sitio web de la empresa. Para el diseño trabajé con la herramienta Figma, realizando wireframes y mockups.<br>
-              <a style="text-decoration: none; color: #F84D2E; text-weight: bold;" href="https://skanhawk.com/"><b>Ver</b></a>
-            </p>
-          </div>
-        </div>
-      </div>
+  <article class="card card--frontend">
+    <div class="card__media">
+      <img src="assets/img/design.webp" alt="Front-End" />
     </div>
+    <h4 class="card__title">Front-End</h4>
+    <button class="card__btn" (click)="openModal('frontend')">Ver más</button>
+  </article>
 
-    <!-- Desarrollo Web -->
-    <div class="work-content">
-      <div class="work-container">
-        <div>
-          <img src="assets/img/code.webp" alt="Imagen_UI/UX" class="work-img-2">
-        </div>
-        <h4>Desarrollo Front-End</h4>
-        <p>
-          Desarrollo sitios web modernos, funcionales y responsivos. <br>
-        </p>
-      </div>
-        <button class="btn-2" (click)="abrirModalWeb()" title="Ver más">
-          Ver más
-        </button>
+  <article class="card card--uiux">
+    <div class="card__media">
+      <img src="assets/img/design_icons.webp" alt="UX/UI" />
     </div>
-    <!-- Modal Desarrollo Web -->
-    <div class="modal-overlay" *ngIf="mostrarModalWeb" (click)="cerrarModales()">
-      <div class="modal-content" (click)="$event.stopPropagation()" style="border-radius: 16px; border: 1px solid #FEBA5F;">
-        <span class="modal-close" (click)="cerrarModales()">×</span>
+    <h4 class="card__title">Diseño Web</h4>
+    <button class="card__btn" (click)="openModal('uiux')">Ver más</button>
+  </article>
 
-        <div class="modal-header" style="background: #333B31; border-radius: 16px; padding: 1rem;">
-          <div class="modal-texts" >
-            <h4 style=" color: #495B45; font-size: 16px; font-weight: bold; margin: 0.5rem; ">PROYECTOS</h4>
-            <h3 class="modal-title">Desarrollo Front-End</h3>
-            <p>
-              Tengo conocimientos sólidos en <strong style="color: #FEBA5F;">HTML</strong>, <strong style="color: #FEBA5F;">CSS</strong> y <strong style="color: #FEBA5F;">JavaScript</strong>. Me gusta trabajar con el framework <strong style="color: #FEBA5F;">Angular</strong>, utilizando <strong style="color: #FEBA5F;">Sass identado</strong> para una estructura de estilos más ordenada y mantenible.
-            </p>
-            <p>
-              Además, tengo experiencia en <strong style="color: #FEBA5F;">TypeScript</strong>, modulación de proyectos y desarrollo de componentes reutilizables. Esta página está construida con Angular, aplicando buenas prácticas de documentación en el código y asegurando la escalabilidad del proyecto.
-            </p>
-          </div>
-          <div class=" modal-icons ">
-            <img src="assets/img/front_icons.webp" alt="Front" />
-          </div>
-        </div>
-        <!-- Sección de proyectos-->
-        <div class="modal-projects">
-          <div class="project-card-2">
-            <div class="project-thumb">
-              <img src="assets/img/FRONT-1.webp" alt="project-1">
-            </div>
-            <p>
-              <strong>MUNDIAL DE FUTBOL</strong><br>
-              Este proyecto fue un reto y entregable desarrollado en el <strong>SENA</strong>, donde creamos una interfaz enfocada en la temática del Mundial de Fútbol.  
-              El sistema incluye un <strong>index</strong>, un <strong>login de registro de usuario</strong> y un <strong>dashboard</strong> con un CRUD de jugadores seleccionados.  
-              Me desempeñé en el desarrollo <strong>Front-End</strong>, realizando la maquetación de las interfaces en <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>, cuidando cada detalle visual para lograr una experiencia atractiva y funcional.  
-              En la parte Back-End, se implementó el registro de usuarios utilizando <strong>Python</strong> y <strong>MySQL</strong> para la gestión de datos. Trabajé en conjunto con el equipo Back-End para asegurar la correcta integración de la interfaz con la lógica del sistema, aplicando buenas prácticas de estructura y modulación en el código.
-            </p>
-          </div>
-          <div class="project-card-2">
-            <div class="project-thumb">
-              <img src="assets/img/FRONT-2.webp" alt="project-2">
-            </div>
-            <p>
-              <strong>PROARCOL</strong><br>
-              En nuestro proyecto del SENA, desarrollamos un sistema de información para PROARCOL, una fábrica de quesos.
-              Me desempeñé en el desarrollo Front-End, participando activamente en la creación de cada uno de los elementos que conforman la interfaz de los distintos módulos.
-              Desde la maquetación con HTML, CSS y JavaScript, estuve a cargo de implementar las secciones de Home, Blog, Login, Dashboard, y las páginas de Error 404 y Error 500.
-              Aunque el proyecto fue desarrollado con Django y Python en el Back-End, trabajé en conjunto con el equipo para asegurar que la integración de las vistas fuera óptima, manteniendo una estructura de código organizada, modular y fácil de escalar.
-            </p>
-          </div>
-          <div class="project-card-2">
-            <div class="project-thumb">
-              <img src="assets/img/FRONT-3.webp" alt="project-3">
-            </div>
-            <p>
-              <strong>SKANHAWK</strong> <br>
-              En SKANHAWK, uno de mis primeros proyectos profesionales fue el diseño y desarrollo de una plantilla informativa para envíos por correo electrónico.
-              El proceso incluyó la creación de diferentes variantes en Figma, y posteriormente el desarrollo en HTML y CSS, cuidando cada detalle visual para asegurar una presentación clara y profesional.
-              Para el lanzamiento de la plantilla, implementé el consumo de APIs de envío de correo electrónico, integrando la funcionalidad mediante Python para automatizar y optimizar el proceso de distribución.
-            </p>
-          </div>
-          <div class="project-card-2">
-            <div class="project-thumb">
-              <img src="assets/img/FRONT-4.webp" alt="project-4">
-            </div>
-            <p>
-              <strong>SKANHAWK</strong> ✨<br>
-              Uno de mis proyectos más importantes fue el diseño y desarrollo de la página web de SKANHAWK, liderando tanto la parte visual como la implementación técnica del sitio.
-              Trabajé en la creación de wireframes y mockups en Figma, asegurando una estructura visual atractiva y funcional.
-              Durante el desarrollo, utilicé HTML, CSS y JavaScript, creando diferentes animaciones, componentes interactivos y estilos personalizados para lograr una apariencia profesional y dinámica.
-              Además, colaboré estrechamente con el equipo de Back-End, realizando ajustes y mejoras basadas en retroalimentación constante, garantizando una integración fluida entre el diseño y la lógica del sistema.<br>
-              <a style="text-decoration: none; color: #FEBA5F; text-weight: bold;" href="https://skanhawk.com/">Ver</a>
-            </p>
-          </div>
-        </div>
-      </div>
+  <article class="card card--graphic">
+    <div class="card__media">
+      <img src="assets/img/design.webp" alt="Diseño Gráfico" />
     </div>
-
-
-    <img src="assets/img/img6.png" alt="Graffiti" class="img-6"> 
-    <img src="assets/img/img7.png" alt="Graffiti" class="img-8">
+    <h4 class="card__title">Diseño Gráfico</h4>
+    <button class="card__btn" (click)="openModal('graphic')">Ver más</button>
+  </article>
 </section>
+
+<!-- BACKEND -->
+<div class="modal-overlay" *ngIf="activeModal === 'backend'" (click)="closeModal()">
+  <div class="modal modal--backend" (click)="$event.stopPropagation()">
+    <!-- HEADER -->
+    <header class="modal__header">
+      <div>
+        <span class="modal__subtitle">Proyectos</span>
+        <h3 class="modal__title">Desarrollo Back-End</h3>
+      </div>
+
+      <button class="modal__close" (click)="closeModal()">×</button>
+    </header>
+
+    <!-- INTRO / PERFIL -->
+    <section class="modal__intro">
+      <div class="modal__description">
+        <p>
+          He participado en el desarrollo de soluciones Back-End
+          enfocadas en la lógica de negocio, el consumo de APIs
+          y la gestión estructurada de datos en entornos productivos.
+        </p>
+
+        <p>
+          Trabajo con una arquitectura clara y mantenible,
+          priorizando la escalabilidad del proyecto,
+          la validación de la información y la correcta integración
+          con el Front-End.
+        </p>
+      </div>
+
+      <!-- HERRAMIENTAS -->
+      <div class="modal__tools">
+        <img src="assets/img/tools/php.svg" alt="PHP">
+        <img src="assets/img/tools/mysql.svg" alt="MySQL">
+        <img src="assets/img/tools/api.svg" alt="APIs">
+        <img src="assets/img/tools/postman.svg" alt="Postman">
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="modal__projects">
+
+      <!-- PROYECTO -->
+      <details class="project">
+        <summary class="project__header">
+          Tu Crédito Directo
+        </summary>
+
+        <div class="project__content">
+
+          <div class="project__media">
+            <img
+              src="assets/img/FRONT-1.webp"
+              alt="Tu Crédito Directo"
+            />
+          </div>
+
+          <div class="project__info">
+            <p>
+              Proyecto desarrollado en entorno productivo,
+              enfocado en la <strong>gestión de cuotas y pagos</strong>
+              para clientes finales.
+            </p>
+
+            <p>
+              Estuve al mando en la implementación de funcionalidades Back-End
+              utilizando <strong>PHP</strong>,
+              realizando el consumo de diferentes APIs proporcionadas
+              por la plataforma <strong>Applikalo</strong>.
+            </p>
+
+            <ul>
+              <li>Consulta de cuotas activas</li>
+              <li>Actualización del estado de las cuotas</li>
+              <li>Lectura y validación de pagos inmediatos</li>
+            </ul>
+
+            <p>
+              Se integró la <strong>API de Bold</strong> para la gestión
+              de pagos automatizados.
+              Todos los registros se almacenan en tablas personalizadas
+              en la base de datos, permitiendo un control completo
+              del proceso financiero.
+            </p>
+
+            <div class="project__actions">
+              <a href="assets/pdf/tu-credito-directo.pdf" download>
+                Descargar PDF
+              </a>
+
+              <a href="https://www.tucreditodirecto.com/consultar-deuda/" target="_blank">
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </details>
+
+      <details class="project">
+        <summary class="project__header">
+          Plugins personalizados para WordPress
+        </summary>
+
+        <div class="project__content">
+
+          <div class="project__info">
+            <p>
+              Desarrollo de <strong>plugins personalizados en WordPress</strong>
+              utilizando <strong>PHP</strong>, enfocados en extender la funcionalidad
+              del sitio y adaptarlo a necesidades específicas del negocio.
+            </p>
+
+            <p>
+              Implementé soluciones como <strong>modales de aceptación de términos
+              y condiciones</strong>, captura y validación de datos desde formularios
+              de registro, y procesamiento de información enviada por el usuario.
+            </p>
+
+            <ul>
+              <li>Creación de plugins desde cero con PHP</li>
+              <li>Gestión de inputs y validación de formularios</li>
+              <li>Modales personalizados para aceptación de términos</li>
+              <li>Envío de confirmaciones vía correo electrónico</li>
+              <li>Integración con el flujo nativo de WordPress</li>
+            </ul>
+
+            <p>
+              Los datos capturados son procesados de forma segura y utilizados
+              para generar notificaciones automáticas por correo electrónico,
+              asegurando una comunicación clara y eficiente con los usuarios.
+            </p>
+
+            <div class="project__actions">
+
+              <a href="https://www.tucreditodirecto.com/2363-2/" target="_blank">
+                Ver implementación
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </details>
+    </section>
+
+  </div>
+</div>
+
+
+<!-- FRONTEND -->
+<div class="modal-overlay" *ngIf="activeModal === 'frontend'" (click)="closeModal()">
+  <div class="modal modal--frontend" (click)="$event.stopPropagation()">
+
+    <!-- HEADER -->
+    <header class="modal__header">
+      <div>
+        <span class="modal__subtitle">Proyectos</span>
+        <h3 class="modal__title">Desarrollo Front-End</h3>
+      </div>
+
+      <button class="modal__close" (click)="closeModal()">×</button>
+    </header>
+
+    <!-- INTRO / PERFIL -->
+    <section class="modal__intro">
+      <div class="modal__description">
+        <p>
+          Desarrollo sitios web modernos, funcionales y responsivos, enfocándome en una
+          implementación limpia y escalable. Trabajo con <strong>Angular</strong> y
+          <strong>TypeScript</strong>, aplicando <strong>Sass identado</strong> para mantener una
+          estructura de estilos clara, consistente y fácil de mantener.
+        </p>
+
+        <p>
+          Me involucro en el proceso completo: desde el diseño y la maquetación, hasta el
+          desarrollo de componentes, animaciones, manejo de contenido y despliegue.
+          Priorizo buenas prácticas, accesibilidad y una experiencia de usuario fluida.
+        </p>
+      </div>
+
+      <!-- HERRAMIENTAS -->
+      <div class="modal__tools">
+        <img src="assets/img/tools/angular.svg" alt="Angular">
+        <img src="assets/img/tools/typescript.svg" alt="TypeScript">
+        <img src="assets/img/tools/sass.svg" alt="Sass">
+        <img src="assets/img/tools/html.svg" alt="HTML">
+        <img src="assets/img/tools/css.svg" alt="CSS">
+        <img src="assets/img/tools/js.svg" alt="JavaScript">
+        <img src="assets/img/tools/figma.svg" alt="Figma">
+        <img src="assets/img/tools/azure.svg" alt="Azure">
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="modal__projects">
+
+      <!-- PROYECTO MÁS ACTUAL (PRIORIDAD) -->
+      <details class="project" open>
+        <summary class="project__header">
+          Colegio Liceo Globerth Mixto · Sitio web institucional (Angular 18)
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/FRONT-LICEO.webp" alt="Colegio Liceo Globerth Mixto">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Desarrollo completo del sitio web institucional del <strong>Colegio Liceo Globerth Mixto</strong>,
+              construido con <strong>Angular 18</strong>. Estuve al mando del proceso completo:
+              <strong>diseño</strong>, <strong>desarrollo</strong> y <strong>despliegue</strong>.
+            </p>
+
+            <ul>
+              <li>Arquitectura y construcción de componentes reutilizables</li>
+              <li>Manejo de contenido, secciones informativas e integración de imágenes</li>
+              <li>Animaciones y transiciones para mejorar la experiencia de navegación</li>
+              <li>Optimización para responsividad y estructura mantenible con Sass identado</li>
+              <li>Despliegue y publicación del sitio mediante <strong>Azure</strong></li>
+            </ul>
+
+            <div class="project__actions">
+              <a href="assets/pdf/liceo-globerth-mixto.pdf" download>
+                Descargar PDF
+              </a>
+              <a href="#" target="_blank">
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- SKANHAWK WEB -->
+      <details class="project">
+        <summary class="project__header">
+          SKANHAWK · Página web corporativa
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/FRONT-4.webp" alt="SKANHAWK Web">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Diseño y desarrollo del sitio web de <strong>SKANHAWK</strong>, liderando tanto la parte visual
+              como la implementación técnica. Se trabajó con wireframes y mockups en <strong>Figma</strong>
+              y el desarrollo en <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>.
+            </p>
+
+            <ul>
+              <li>Maquetación y estilos personalizados con enfoque responsive</li>
+              <li>Animaciones y componentes interactivos</li>
+              <li>Colaboración con el equipo Back-End para ajustes e integración</li>
+            </ul>
+
+            <div class="project__actions">
+              <a href="assets/pdf/skanhawk-web.pdf" download>
+                Descargar PDF
+              </a>
+              <a href="https://skanhawk.com/" target="_blank">
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 3) SKANHAWK EMAIL TEMPLATE -->
+      <details class="project">
+        <summary class="project__header">
+          SKANHAWK · Plantilla de correo (HTML Email)
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/FRONT-3.webp" alt="Plantilla email SKANHAWK">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Diseño y desarrollo de una plantilla informativa para envíos por correo electrónico.
+              Se realizaron variantes en <strong>Figma</strong> y se implementó el desarrollo en
+              <strong>HTML</strong> y <strong>CSS</strong> cuidando compatibilidad y claridad visual.
+            </p>
+
+            <ul>
+              <li>Diseño de variantes y adaptación a layout de email</li>
+              <li>Implementación HTML/CSS optimizada para lectura y jerarquía</li>
+              <li>Trabajo coordinado para su integración y envío automatizado</li>
+            </ul>
+
+            <div class="project__actions">
+              <a href="assets/pdf/skanhawk-email-template.pdf" download>
+                Descargar PDF
+              </a>
+              <a href="#" target="_blank">
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 4) PROARCOL -->
+      <details class="project">
+        <summary class="project__header">
+          PROARCOL · Sistema de información (SENA)
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/FRONT-2.webp" alt="PROARCOL">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Sistema de información desarrollado en el SENA para <strong>PROARCOL</strong> (fábrica de quesos).
+              Participé en el desarrollo <strong>Front-End</strong> construyendo las interfaces de distintos módulos.
+            </p>
+
+            <ul>
+              <li>Implementación de Home, Blog, Login y Dashboard</li>
+              <li>Páginas de error 404 y 500</li>
+              <li>Estructura modular y coordinación con el Back-End (Django/Python)</li>
+            </ul>
+
+            <div class="project__actions">
+              <a href="assets/pdf/proarcol.pdf" download>
+                Descargar PDF
+              </a>
+              <a href="#" target="_blank">
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 5) MUNDIAL DE FUTBOL -->
+      <details class="project">
+        <summary class="project__header">
+          Mundial de Fútbol · Interfaz + Dashboard (SENA)
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/FRONT-1.webp" alt="Mundial de Fútbol">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Reto desarrollado en el <strong>SENA</strong>: interfaz temática del Mundial con
+              <strong>index</strong>, <strong>registro/login</strong> y un <strong>dashboard</strong>
+              con CRUD de jugadores seleccionados.
+            </p>
+
+            <ul>
+              <li>Maquetación y UI en HTML, CSS y JavaScript</li>
+              <li>Construcción de vistas y flujo de navegación</li>
+              <li>Trabajo conjunto con Back-End (Python + MySQL) para integración</li>
+            </ul>
+
+            <div class="project__actions">
+              <a href="assets/pdf/mundial-futbol.pdf" download>
+                Descargar PDF
+              </a>
+              <a href="#" target="_blank">
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </section>
+
+  </div>
+</div>
+
+
+<!-- UX/UI -->
+<div class="modal-overlay" *ngIf="activeModal === 'uiux'" (click)="closeModal()">
+  <div class="modal modal--uiux" (click)="$event.stopPropagation()">
+
+    <!-- HEADER -->
+    <header class="modal__header">
+      <div>
+        <span class="modal__subtitle">Proyectos</span>
+        <h3 class="modal__title">Diseño Web</h3>
+      </div>
+      <button class="modal__close" (click)="closeModal()">×</button>
+    </header>
+
+    <!-- INTRO / PERFIL -->
+    <section class="modal__intro">
+      <div class="modal__description">
+        <p>
+          En mi experiencia profesional me he desempeñado como
+          <strong>desarrollador Full-Stack</strong>, con un fuerte enfoque en
+          <strong>diseño UX/UI aplicado a productos reales</strong>.
+        </p>
+
+        <p>
+          Para el diseño y la implementación web he trabajado principalmente con
+          <strong>WordPress</strong> y <strong>Visual Studio Code</strong>,
+          creando secciones visualmente atractivas mediante
+          <strong>fragmentos de código personalizados</strong>,
+          plantillas y plugins, siempre cuidando la experiencia del usuario,
+          la estructura visual y la conversión.
+        </p>
+
+        <p>
+          He liderado procesos de <strong>rediseño, reestructuración visual,
+          optimización de contenido e implementación de nuevas funcionalidades</strong>
+          en diferentes páginas y e-commerce.
+        </p>
+      </div>
+
+      <!-- HERRAMIENTAS -->
+      <div class="modal__tools">
+        <img src="assets/img/tools/figma.svg" alt="Figma">
+        <img src="assets/img/tools/illustrator.svg" alt="Illustrator">
+        <img src="assets/img/tools/wordpress.svg" alt="WordPress">
+        <img src="assets/img/tools/html.svg" alt="HTML">
+        <img src="assets/img/tools/css.svg" alt="CSS">
+        <img src="assets/img/tools/js.svg" alt="JavaScript">
+        <img src="assets/img/tools/vscode.svg" alt="VS Code">
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="modal__projects">
+
+      <!-- CREDILIGHT -->
+      <details class="project" open>
+        <summary class="project__header">
+          CrediLight · Rediseño visual y optimización de e-commerce
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/UX-CREDILIGHT.webp" alt="CrediLight">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Proyecto enfocado en la <strong>actualización visual y de contenido</strong>
+              del e-commerce tecnológico <strong>CrediLight</strong>.
+              Se realizó un <strong>rediseño completo del Home</strong> y de
+              las secciones de productos.
+            </p>
+
+            <ul>
+              <li>Reestructuración visual del Home</li>
+              <li>Optimización de secciones de productos</li>
+              <li>Mejora de jerarquía visual y experiencia de compra</li>
+              <li>Ajustes de contenido y presentación comercial</li>
+              <li>Trabajo sobre WordPress usando plantillas y plugins</li>
+            </ul>
+
+            <p>
+              El objetivo principal fue mejorar la navegación, la claridad
+              de la información y la conversión del e-commerce.
+            </p>
+
+            <div class="project__actions">
+              <a href="assets/pdf/credilight.pdf" download>Descargar PDF</a>
+              <a href="#" target="_blank">Ver proyecto</a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- TECNOLOGÍA Y CRÉDITO -->
+      <details class="project">
+        <summary class="project__header">
+          Tecnología y Crédito · Construcción e-commerce desde cero
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/UX-TECNOLOGIA-CREDITO.webp" alt="Tecnología y Crédito">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Desarrollo y construcción desde cero del e-commerce
+              <strong>Tecnología y Crédito</strong>,
+              enfocado en la venta de productos tecnológicos.
+            </p>
+
+            <ul>
+              <li>Diseño y estructuración completa del sitio</li>
+              <li>Implementación de fragmentos personalizados en HTML, CSS y JS</li>
+              <li>Uso e integración de plugins de WordPress</li>
+              <li>Actualización de productos y gestión de catálogo</li>
+              <li>Optimización y ajustes en funcionalidades de pago</li>
+            </ul>
+
+            <p>
+              Trabajé combinando herramientas visuales y desarrollo personalizado,
+              asegurando una experiencia coherente y funcional para el usuario.
+            </p>
+
+            <div class="project__actions">
+              <a href="assets/pdf/tecnologia-credito.pdf" download>Descargar PDF</a>
+              <a href="https://www.tecnologiaycredito.com/" target="_blank">Ver proyecto</a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- TU CRÉDITO DIRECTO -->
+      <details class="project">
+        <summary class="project__header">
+          Tu Crédito Directo · UX, animaciones y personalización
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/UX-TU-CREDITO-DIRECTO.webp" alt="Tu Crédito Directo UX">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Implementación de mejoras UX/UI en la plataforma
+              <strong>Tu Crédito Directo</strong>,
+              participando en la <strong>gestión visual, estructuración
+              e implementación de funcionalidades</strong>.
+            </p>
+
+            <ul>
+              <li>Creación de animaciones para mejorar la experiencia</li>
+              <li>Fragmentos de código personalizados</li>
+              <li>Uso y personalización de plugins de WordPress</li>
+              <li>Ajustes visuales y de estructura en distintas secciones</li>
+            </ul>
+
+            <p>
+              El trabajo se centró en mejorar la interacción del usuario
+              y la claridad del flujo visual dentro de la plataforma.
+            </p>
+
+            <div class="project__actions">
+              <a href="assets/pdf/tu-credito-directo-ux.pdf" download>Descargar PDF</a>
+              <a href="https://www.tucreditodirecto.com/" target="_blank">Ver proyecto</a>
+            </div>
+          </div>
+        </div>
+      </details>
+      <!-- SKANHAWK -->
+      <details class="project">
+        <summary class="project__header">
+          SKANHAWK · Diseño UX/UI (Primer proyecto profesional)
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/UX-4.webp" alt="SKANHAWK Web UX/UI">
+          </div>
+
+          <div class="project__info">
+            <p>
+              <strong>SKANHAWK</strong> fue mi primer proyecto profesional,
+              donde participé activamente en el <strong>diseño UX/UI</strong>
+              y en la construcción visual de distintos productos digitales de la marca.
+            </p>
+
+            <p>
+              Estuve a cargo del diseño de la <strong>página web corporativa</strong>,
+              trabajando desde la conceptualización visual hasta la definición
+              de la estructura y jerarquía de la información.
+            </p>
+
+            <ul>
+              <li>Diseño de wireframes y mockups en Figma</li>
+              <li>Definición de estructura visual y navegación</li>
+              <li>Diseño del login de usuario con enfoque amigable</li>
+              <li>Creación de plantilla informativa para envíos por correo</li>
+              <li>Aplicación de criterios de claridad, estética y usabilidad</li>
+            </ul>
+
+            <p>
+              Este proyecto fue clave en mi crecimiento profesional,
+              ya que me permitió aplicar criterios de diseño en un entorno real,
+              entendiendo necesidades del negocio y del usuario final.
+            </p>
+
+            <div class="project__actions">
+              <a href="assets/pdf/skanhawk-uxui.pdf" download>
+                Descargar PDF
+              </a>
+              <a href="https://skanhawk.com/" target="_blank">
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="project">
+        <summary class="project__header">
+          Proyectos académicos y visuales (SENA / SKANHAWK)
+        </summary>
+
+        <div class="project__content">
+          <p>
+            Desarrollo de interfaces, arquitectura de información y diseño visual
+            para proyectos académicos y profesionales, incluyendo:
+          </p>
+
+          <ul>
+            <li>PROARCOL · Sistema de información (SENA)</li>
+            <li>SKANHAWK · Diseño de login, plantilla de correo y web corporativa</li>
+            <li>Wireframes, mockups y prototipos en Figma</li>
+          </ul>
+
+          <div class="project__actions">
+            <a href="#" target="_blank">Ver proyectos</a>
+          </div>
+        </div>
+      </details>
+
+    </section>
+
+  </div>
+</div>
+
+<!-- GRAPHIC -->
+<div class="modal-overlay" *ngIf="activeModal === 'graphic'" (click)="closeModal()">
+  <div class="modal modal--graphic" (click)="$event.stopPropagation()">
+
+    <!-- HEADER -->
+    <header class="modal__header">
+      <div>
+        <span class="modal__subtitle">Proyectos</span>
+        <h3 class="modal__title">Diseño Gráfico</h3>
+      </div>
+      <button class="modal__close" (click)="closeModal()">×</button>
+    </header>
+
+    <!-- INTRO -->
+    <section class="modal__intro">
+      <div class="modal__description">
+        <p>
+          En cada uno de los proyectos en los que he participado,
+          el <strong>diseño gráfico</strong> ha sido una pieza clave
+          para fortalecer la identidad visual y la comunicación
+          de las marcas.
+        </p>
+
+        <p>
+          He diseñado <strong>piezas gráficas para páginas web y redes sociales</strong>,
+          adaptando cada diseño a la identidad de la marca,
+          el contexto comercial y eventos específicos.
+          Además, he desarrollado <strong>catálogos visuales de productos</strong>
+          enfocados en claridad, impacto y conversión.
+        </p>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="modal__tools">
+        <img src="assets/img/tools/figma.svg" alt="Figma">
+        <img src="assets/img/tools/canva.svg" alt="Canva">
+        <img src="assets/img/tools/illustrator.svg" alt="Illustrator">
+        <img src="assets/img/tools/photoshop.svg" alt="Photoshop">
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="modal__projects">
+
+      <!-- 1) CREDILIGHT -->
+      <details class="project" open>
+        <summary class="project__header">
+          CrediLight · Diseño gráfico y catálogos comerciales
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/GRAPHIC-CREDILIGHT.webp" alt="CrediLight Diseño Gráfico">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Desarrollo de <strong>piezas gráficas y elementos visuales</strong>
+              para <strong>CrediLight</strong>, tanto para la página web
+              como para redes sociales, manteniendo una identidad visual
+              coherente y atractiva.
+            </p>
+
+            <ul>
+              <li>Diseño de banners y elementos visuales para la web</li>
+              <li>Piezas gráficas para redes sociales</li>
+              <li>Creación de catálogos visuales de productos</li>
+              <li>Adaptación del diseño según campañas y promociones</li>
+            </ul>
+
+            <p>
+              Los catálogos fueron diseñados para presentar los productos
+              de forma clara y comercial, facilitando la lectura y la decisión
+              de compra.
+            </p>
+
+            <!-- CATÁLOGOS -->
+            <div class="project__actions">
+              <a href="assets/pdf/catalogo-celulares.pdf" download>
+                Catálogo Celulares
+              </a>
+              <a href="assets/pdf/catalogo-electrodomesticos.pdf" download>
+                Catálogo Electrodomésticos
+              </a>
+              <a href="assets/pdf/catalogo-televisores.pdf" download>
+                Catálogo Televisores
+              </a>
+            </div>
+
+            <div class="project__actions">
+              <a href="assets/pdf/credilight-grafico.pdf" download>
+                Descargar PDF
+              </a>
+              <a href="#" target="_blank">
+                Ver sitio
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 2) TECNOLOGÍA Y CRÉDITO -->
+      <details class="project">
+        <summary class="project__header">
+          Tecnología y Crédito · Identidad gráfica y campañas visuales
+        </summary>
+
+        <div class="project__content">
+          <div class="project__media">
+            <img src="assets/img/GRAPHIC-TECNOLOGIA-CREDITO.webp" alt="Tecnología y Crédito Diseño Gráfico">
+          </div>
+
+          <div class="project__info">
+            <p>
+              Diseño de <strong>piezas gráficas para página web y redes sociales</strong>
+              para <strong>Tecnología y Crédito</strong>,
+              respetando su identidad visual y enfoque comercial.
+            </p>
+
+            <ul>
+              <li>Diseño de piezas gráficas para web y redes</li>
+              <li>Creación de contenidos visuales según eventos y festividades</li>
+              <li>Adaptación gráfica para campañas comerciales</li>
+              <li>Mantenimiento de identidad visual consistente</li>
+            </ul>
+
+            <p>
+              Cada pieza fue pensada según el contexto del evento,
+              manteniendo coherencia visual y claridad en el mensaje.
+            </p>
+
+            <div class="project__actions">
+              <a href="assets/pdf/tecnologia-credito-grafico.pdf" download>
+                Descargar PDF
+              </a>
+              <a href="#" target="_blank">
+                Ver sitio
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <!-- 3) PROYECTOS EXTERNOS -->
+      <details class="project">
+        <summary class="project__header">
+          Proyectos gráficos externos · Logos y contenido digital
+        </summary>
+
+        <div class="project__content">
+          <div class="project__info">
+            <p>
+              Desarrollo de <strong>proyectos gráficos independientes</strong>
+              para diferentes plataformas y formatos digitales.
+            </p>
+
+            <ul>
+              <li>Diseño de miniaturas para YouTube</li>
+              <li>Creación de logotipos</li>
+              <li>Piezas gráficas para contenido digital</li>
+              <li>Adaptación de diseños a diferentes formatos</li>
+            </ul>
+
+            <p>
+              Estos proyectos me han permitido explorar distintos estilos
+              visuales y adaptar el diseño a diferentes públicos y objetivos.
+            </p>
+
+            <div class="project__actions">
+              <a href="assets/pdf/proyectos-graficos.pdf" download>
+                Descargar PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </section>
+
+  </div>
+</div>

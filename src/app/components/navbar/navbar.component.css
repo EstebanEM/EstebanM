@@ -1,0 +1,536 @@
+@charset "UTF-8";
+@import url("https://fonts.cdnfonts.com/css/sirukota");
+main {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+main .presentation {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main .presentation .content-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  /*Titulos de precentación*/
+  /*BOTÓN DE YT*/
+}
+
+main .presentation .content-wrapper .hello-sticker {
+  background: #d32f2f;
+  border: 5px solid #ffffff;
+  width: 200px;
+  padding: 12px;
+  transform: rotate(-5deg);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  transition: transform 0.3s ease-in-out;
+}
+
+main .presentation .content-wrapper .hello-sticker:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+main .presentation .content-wrapper .hello-sticker .hello-title {
+  color: white;
+  font-weight: 900;
+  font-size: 1.3rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+main .presentation .content-wrapper .hello-sticker .hello-name {
+  background-color: white;
+  padding: 5px 4px;
+  color: #d32f2f;
+  font-size: 1.4rem;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: normal;
+  margin: 5px 0 0;
+}
+
+main .presentation .content-wrapper .title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FEBA5F;
+  max-width: fit-content;
+  max-width: 600px;
+  width: 100%;
+  /*Titulos 'ARTE'*/
+  /*Subtitulo 'Portafolio'*/
+  /* Saludo y CARITA FELIZ*/
+}
+
+main .presentation .content-wrapper .title-container h1 {
+  font-family: 'Peteroy', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-shadow: 0 8px 0 #F84D2E;
+  margin: 0.5rem 0;
+  line-height: 1;
+  z-index: 2;
+}
+
+main .presentation .content-wrapper .title-container #text_dinamic {
+  color: #FEBA5F;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 0 4px 0 #F84D2E;
+  letter-spacing: 2px;
+  font-size: 39px;
+  width: 100%;
+  bottom: 45%;
+  display: block;
+}
+
+main .presentation .content-wrapper .title-container #text_dinamic #flip {
+  height: 50px;
+  overflow: hidden;
+}
+
+main .presentation .content-wrapper .title-container #text_dinamic #flip > div > div {
+  color: #FEBA5F;
+  padding: 4px 12px;
+  height: 45px;
+  margin-bottom: 45px;
+  display: inline-block;
+}
+
+main .presentation .content-wrapper .title-container #text_dinamic #flip div:first-child {
+  animation: show 7s linear infinite;
+}
+
+@keyframes show {
+  0% {
+    margin-top: -270px;
+  }
+  5% {
+    margin-top: -180px;
+  }
+  33% {
+    margin-top: -180px;
+  }
+  38% {
+    margin-top: -90px;
+  }
+  66% {
+    margin-top: -90px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
+  }
+}
+
+main .presentation .content-wrapper .title-container p {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  opacity: 0;
+  animation: sliderInLeft 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+main .presentation .content-wrapper .title-container p svg.mask {
+  position: absolute;
+  left: 99%;
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+main .presentation .content-wrapper .title-container p .cl {
+  stroke: #F84D2E;
+  stroke-linecap: round;
+}
+
+main .presentation .content-wrapper .title-container p .cl:nth-child(1),
+main .presentation .content-wrapper .title-container p .cl:nth-child(2) {
+  stroke-dasharray: 50;
+  stroke-dashoffset: -50;
+  animation: M1 8s ease-out infinite;
+}
+
+main .presentation .content-wrapper .title-container p .cl:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+main .presentation .content-wrapper .title-container p .cl:nth-child(3) {
+  stroke-dasharray: 170;
+  stroke-dashoffset: -170;
+  animation: M1-2 8s ease-out infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes M1 {
+  0% {
+    stroke-dashoffset: 50;
+    stroke-width: 2;
+  }
+  15%, 85% {
+    stroke-dashoffset: 0;
+    stroke-width: 16;
+  }
+  100% {
+    stroke-dashoffset: -50;
+    stroke-width: 2;
+  }
+}
+
+@keyframes M1-2 {
+  0% {
+    stroke-dashoffset: 170;
+    stroke-width: 4;
+  }
+  15%, 85% {
+    stroke-dashoffset: 0;
+    stroke-width: 16;
+  }
+  100% {
+    stroke-dashoffset: -170;
+  }
+}
+
+@keyframes sliderInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+main .presentation .content-wrapper .button-container {
+  display: flex;
+  align-items: flex-end;
+  border-radius: 45px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeUp 2s ease forwards;
+}
+
+main .presentation .content-wrapper .button-container .yt-avatar-button {
+  width: 65%;
+  height: auto;
+  cursor: pointer;
+}
+
+main .presentation .content-wrapper .button-container .yt-arrow-button {
+  position: absolute;
+  top: 80%;
+  left: 75%;
+  transform: translate(10px, 20px);
+  transform: rotate(-20deg);
+  z-index: 1;
+}
+
+main .presentation .content-wrapper .button-container .button-info {
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  font-size: 1.2rem;
+  color: #FEBA5F;
+  text-align: left;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  main .presentation {
+    padding: 4rem;
+  }
+  main .presentation .content-wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  main .presentation .content-wrapper .hello-sticker {
+    width: 150px;
+    padding: 12px;
+    top: 1px;
+    left: 0;
+  }
+  main .presentation .content-wrapper .hello-sticker .hello-title {
+    font-size: 1rem;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+  main .presentation .content-wrapper .hello-sticker .hello-name {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin: 5px 0 0;
+  }
+  main .presentation .content-wrapper .title-container h1 {
+    font-size: 8rem;
+  }
+  main .presentation .content-wrapper .title-container h3 {
+    font-size: 1.8rem;
+  }
+  main .presentation .content-wrapper .title-container h2 {
+    font-size: 2.5rem;
+  }
+  main .presentation .content-wrapper .title-container #flip {
+    height: 2.5rem;
+  }
+  main .presentation .content-wrapper .title-container p {
+    font-size: 1.3rem;
+  }
+  main .presentation .content-wrapper .title-container .button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  main .presentation .content-wrapper .title-container .button-container .yt-avatar-button {
+    width: 55%;
+    height: auto;
+    cursor: pointer;
+  }
+  main .presentation .content-wrapper .title-container .button-container .yt-arrow-button {
+    position: absolute;
+    width: 55px;
+    height: 45px;
+    left: 71%;
+  }
+  main .presentation .content-wrapper .title-container .button-container .button-info {
+    position: absolute;
+    top: 50%;
+    left: 79%;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main .presentation {
+    padding: 3rem;
+  }
+  main .presentation .content-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  main .presentation .content-wrapper .hello-sticker {
+    width: 100px;
+    border: 3px solid #ffffff;
+    padding: 10px;
+    top: 1px;
+    left: 0;
+  }
+  main .presentation .content-wrapper .hello-sticker .hello-title {
+    font-size: 12px;
+    font-weight: semi-bold;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+  main .presentation .content-wrapper .hello-sticker .hello-name {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 4px 0 0;
+  }
+  main .presentation .content-wrapper .title-container h1 {
+    font-size: 6rem;
+  }
+  main .presentation .content-wrapper .title-container h3 {
+    font-size: 1.4rem;
+  }
+  main .presentation .content-wrapper .title-container h2 {
+    font-size: 2rem;
+  }
+  main .presentation .content-wrapper .title-container p {
+    font-size: 14px;
+    font-weight: 100;
+  }
+  main .presentation .content-wrapper .title-container p svg.mask {
+    left: 85%;
+    top: 90%;
+    width: 40px;
+    height: auto;
+  }
+  main .presentation .content-wrapper .title-container #flip {
+    height: 3rem;
+  }
+  main .presentation .content-wrapper .button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  main .presentation .content-wrapper .button-container .yt-avatar-button {
+    width: 45%;
+    height: auto;
+    cursor: pointer;
+  }
+  main .presentation .content-wrapper .button-container .yt-arrow-button {
+    position: absolute;
+    width: 55px;
+    height: 40px;
+    left: 65%;
+  }
+  main .presentation .content-wrapper .button-container .button-info {
+    position: absolute;
+    top: 50%;
+    left: 79%;
+    font-size: 1rem;
+  }
+}
+
+.site-header {
+  position: relative;
+  width: 100%;
+}
+
+.site-header .skills-bar {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: rgba(0, 0, 0, 0.44);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 4;
+}
+
+.site-header .skills-bar .skill-item {
+  position: relative;
+  padding: 1.2rem 1rem;
+  color: #FFD7A29A;
+  transition: background 0.3s ease;
+}
+
+.site-header .skills-bar .skill-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.site-header .skills-bar .skill-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 65%;
+  background: #FFD7A23A;
+}
+
+.site-header .skills-bar .skill-item .skill-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.site-header .skills-bar .skill-item .skill-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.site-header .skills-bar .skill-item:hover .skill-icon {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.site-header .skills-bar .skill-item .skill-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.site-header .skills-bar .skill-item .skill-content h4 {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.site-header .skills-bar .skill-item .skill-content p {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.site-header .skills-bar .skill-item.skill-angular .skill-layout {
+  align-items: center;
+}
+
+.site-header .skills-bar .skill-item.skill-angular .skill-title-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin: 0 0.5rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .site-header .skills-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .site-header .skills-bar .skill-item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header .skills-bar {
+    grid-template-columns: 1fr;
+  }
+  .site-header .skills-bar .skill-layout {
+    align-items: center;
+  }
+  .site-header .skills-bar .skill-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .site-header .skills-bar .skill-content p {
+    font-size: 0.7rem;
+  }
+  .site-header .skills-bar .skill-item.skill-angular .skill-title-vertical {
+    writing-mode: horizontal-tb;
+    transform: none;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+}

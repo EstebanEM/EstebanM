@@ -8,20 +8,15 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
 
-  mostrarModalUIUX: boolean = false;
-  mostrarModalWeb: boolean = false;
 
-  abrirModalUIUX() {
-    this.mostrarModalUIUX = true;
+  activeModal: 'backend' | 'frontend' | 'uiux' | 'graphic' | null = null
+
+  openModal(type: 'backend' | 'frontend' | 'uiux' | 'graphic') {
+    this.activeModal = type
   }
 
-  abrirModalWeb() {
-    this.mostrarModalWeb = true;
-  }
-
-  cerrarModales() {
-    this.mostrarModalUIUX = false;
-    this.mostrarModalWeb = false;
+  closeModal() {
+    this.activeModal = null
   }
 
 }
