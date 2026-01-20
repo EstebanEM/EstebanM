@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
 
-
   activeModal: 'backend' | 'frontend' | 'uiux' | 'graphic' | null = null
 
   openModal(type: 'backend' | 'frontend' | 'uiux' | 'graphic') {
