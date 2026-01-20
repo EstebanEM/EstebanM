@@ -20,14 +20,26 @@
   max-width: 300px;
 }
 
+.subtittle-proyectos {
+  color: #FEBA5F;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 500;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
 @media (max-width: 768px) {
-  .titulo-proyectos::before, .titulo-proyectos::after {
+  .subtittle-proyectos::before, .subtittle-proyectos::after {
     max-width: 150px;
   }
 }
 
 @media (max-width: 480px) {
-  .titulo-proyectos::before, .titulo-proyectos::after {
+  .subtittle-proyectos::before, .subtittle-proyectos::after {
     max-width: 80px;
   }
 }
@@ -108,10 +120,7 @@
 
 .card__title {
   margin: .2rem 0 0;
-  font-size: .95rem;
-  letter-spacing: 0.8px;
   text-transform: uppercase;
-  font-weight: 700;
   color: #FFD7A2;
 }
 
@@ -129,17 +138,17 @@
 }
 
 .card--backend {
-  border-bottom: 3px solid #000000;
+  border-bottom: 3px solid #bd7df1;
 }
 
 .card--backend .card__btn {
-  border-color: rgba(0, 0, 0, 0.6);
+  border-color: rgba(189, 125, 241, 0.6);
   color: #FFD7A2;
 }
 
 .card--backend .card__btn:hover {
-  background: rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
+  background: rgba(189, 125, 241, 0.15);
+  box-shadow: 0 0 12px rgba(189, 125, 241, 0.45);
 }
 
 .card--frontend {
@@ -377,11 +386,23 @@
   background: #ffffff;
 }
 
+.project__content img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 1rem;
+  position: center;
+}
+
 .project__content p, .project__content li {
-  margin: 0 0 1.1rem;
+  margin: 1rem;
   line-height: 1.75;
   font-size: .95rem;
-  color: #000000;
+  color: #494949;
+}
+
+.project__content li {
+  margin-left: 4rem;
+  line-height: 1.75;
 }
 
 @keyframes contentIn {
@@ -407,7 +428,7 @@
   border-radius: 999px;
   font-size: .85rem;
   font-weight: 600;
-  border: 2px solid rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(189, 125, 241, 0.55);
   color: #171718;
   text-decoration: none;
   background: transparent;
@@ -415,13 +436,12 @@
 }
 
 .project__actions a:hover {
-  background: rgba(254, 186, 95, 0.16);
-  box-shadow: 0 6px 18px rgba(254, 186, 95, 0.35);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   transform: translateY(-2px);
 }
 
 .modal--backend {
-  border-top: 3px solid rgba(0, 0, 0, 0.85);
+  border-top: 3px solid rgba(189, 125, 241, 0.85);
 }
 
 .modal--frontend {
@@ -434,4 +454,105 @@
 
 .modal--graphic {
   border-top: 3px solid rgba(0, 174, 255, 0.85);
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    max-width: 92%;
+    padding: 2.2rem 2.2rem;
+  }
+  .modal__intro {
+    gap: 2.4rem;
+  }
+  .project__content {
+    padding: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-overlay {
+    align-items: flex-start;
+    padding: 1.2rem;
+  }
+  .modal {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 18px;
+    padding: 1.8rem 1.6rem;
+  }
+  .modal__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .modal__controls {
+    align-self: flex-end;
+  }
+  .modal__title {
+    font-size: 1.4rem;
+  }
+  .modal__intro {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    margin-bottom: 2.4rem;
+  }
+  .modal__tools {
+    justify-content: flex-start;
+  }
+  .project summary {
+    padding: 1.2rem 1.4rem;
+  }
+  .project__content {
+    padding: 1.4rem;
+  }
+  .project__content img {
+    margin-top: .8rem;
+  }
+  .project__content p {
+    margin: 0 0 1rem;
+  }
+  .project__content li {
+    margin-left: 1.4rem;
+  }
+  .project__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .project__actions a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 1.4rem 1.2rem;
+    border-radius: 14px;
+  }
+  .modal__subtitle {
+    font-size: .65rem;
+  }
+  .modal__title {
+    font-size: 1.25rem;
+  }
+  .modal__theme-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: .85rem;
+  }
+  .modal__close {
+    font-size: 1.5rem;
+  }
+  .modal__intro p {
+    font-size: .9rem;
+  }
+  .project summary {
+    font-size: .9rem;
+  }
+  .project__content p, .project__content li {
+    font-size: .9rem;
+  }
+  .project__actions a {
+    padding: .6rem 1.2rem;
+  }
 }

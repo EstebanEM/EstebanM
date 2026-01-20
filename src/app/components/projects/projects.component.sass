@@ -6,8 +6,9 @@ $bg-dark: #495B45
 $text-light: #ffffff
 $bg-presentacion: #983C3C
 $orange: #F84D2E
-
-$backend: #000000
+$black: #000000
+$greey: #494949
+$backend: #bd7df1
 $frontend: #FEBA5F
 $uiux: #f176eb
 $graphic: #00aeff
@@ -34,7 +35,16 @@ $graphic: #00aeff
     height: 1px
     background: $primary-color
     max-width: 300px
-
+.subtittle-proyectos
+  color: $primary-color
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  line-height: 1
+  font-weight: 500
+  margin: 0 auto
+  padding: 1rem 0
   @media (max-width: 768px)
     &::before,
     &::after
@@ -115,10 +125,7 @@ $graphic: #00aeff
 // ==============================
 .card__title
   margin: .2rem 0 0
-  font-size: .95rem
-  letter-spacing: 0.8px
   text-transform: uppercase
-  font-weight: 700
   color: $secondary-color
 
 // ==============================
@@ -368,7 +375,6 @@ $graphic: #00aeff
   &[open] summary::after
     transform: translateY(-50%) rotate(90deg)
 
-
 // ==============================
 // Project content
 // ==============================
@@ -376,11 +382,19 @@ $graphic: #00aeff
   padding: 1.7rem 1.7rem 1.9rem
   animation: contentIn .25s ease
   background: $text-light
+  img 
+    max-width: 100%
+    border-radius: 12px
+    margin-top: 1rem
+    position: center
   p, li
-    margin: 0 0 1.1rem
+    margin: 1rem
     line-height: 1.75
     font-size: .95rem
-    color: $backend
+    color: #494949
+  li
+    margin-left: 4rem
+    line-height: 1.75
 
 @keyframes contentIn
   from
@@ -412,8 +426,7 @@ $graphic: #00aeff
     transition: background .2s ease, box-shadow .2s ease, transform .2s ease
 
     &:hover
-      background: rgba($primary-color, .16)
-      box-shadow: 0 6px 18px rgba($primary-color, .35)
+      box-shadow: 0 6px 18px rgba(#000, .35)
       transform: translateY(-2px)
 
 
@@ -431,3 +444,115 @@ $graphic: #00aeff
 
 .modal--graphic
   border-top: 3px solid rgba(#00aeff, .85)
+
+
+// ==============================
+// Responsive – Tablet
+// ==============================
+@media (max-width: 1024px)
+  .modal
+    max-width: 92%
+    padding: 2.2rem 2.2rem
+
+  .modal__intro
+    gap: 2.4rem
+
+  .project__content
+    padding: 1.6rem
+
+
+// ==============================
+// Responsive – Mobile
+// ==============================
+@media (max-width: 768px)
+  .modal-overlay
+    align-items: flex-start
+    padding: 1.2rem
+
+  .modal
+    max-width: 100%
+    max-height: 100%
+    border-radius: 18px
+    padding: 1.8rem 1.6rem
+
+  // Header
+  .modal__header
+    flex-direction: column
+    align-items: flex-start
+    gap: 1rem
+
+  .modal__controls
+    align-self: flex-end
+
+  .modal__title
+    font-size: 1.4rem
+
+  // Intro
+  .modal__intro
+    grid-template-columns: 1fr
+    gap: 1.8rem
+    margin-bottom: 2.4rem
+
+  .modal__tools
+    justify-content: flex-start
+
+  // Projects
+  .project summary
+    padding: 1.2rem 1.4rem
+
+  .project__content
+    padding: 1.4rem
+
+    img
+      margin-top: .8rem
+
+    p
+      margin: 0 0 1rem
+
+    li
+      margin-left: 1.4rem
+
+  // Actions
+  .project__actions
+    flex-direction: column
+    align-items: stretch
+
+    a
+      width: 100%
+      text-align: center
+
+
+// ==============================
+// Responsive – Small mobile
+// ==============================
+@media (max-width: 480px)
+  .modal
+    padding: 1.4rem 1.2rem
+    border-radius: 14px
+
+  .modal__subtitle
+    font-size: .65rem
+
+  .modal__title
+    font-size: 1.25rem
+
+  .modal__theme-toggle
+    width: 32px
+    height: 32px
+    font-size: .85rem
+
+  .modal__close
+    font-size: 1.5rem
+
+  .modal__intro p
+    font-size: .9rem
+
+  .project summary
+    font-size: .9rem
+
+  .project__content
+    p, li
+      font-size: .9rem
+
+  .project__actions a
+    padding: .6rem 1.2rem
