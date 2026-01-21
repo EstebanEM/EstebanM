@@ -56,15 +56,36 @@ $orange: #F84D2E
       color: $primary-color
       font-family: 'Peteroy', sans-serif
       line-height: 1.2
-      opacity: 0
-      animation: fadeUp 1s ease forwards
       z-index: 2
-    
+
+    .typewriter
+      span
+        display: inline-block
+        overflow: hidden
+        white-space: nowrap
+        font-family: 'Peteroy', sans-serif
+        border-right: 3px solid $primary-color
+        width: 0
+        animation: typing 2s steps(9, end), blink 0.8s step-end infinite
+        animation-fill-mode: forwards
+
     p
       color: $secondary-color
       max-width: 800px
       z-index: 2
-      
+
+  @keyframes typing
+    from
+      width: 0
+    to
+      width: 11ch
+
+  @keyframes blink
+    0%, 100%
+      border-color: transparent
+    50%
+      border-color: $primary-color
+   
   
   .img1
     position: absolute
