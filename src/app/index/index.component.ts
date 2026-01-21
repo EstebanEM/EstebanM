@@ -12,6 +12,10 @@ type SectionType = 'Dibujos' | 'Manualidades' | 'Murales';
 
 export class IndexComponent {
 
+  leavingIndex: number | null = null;
+  isAnimating = false;
+
+
   sections: SectionType[] = [
     'Dibujos', 
     'Manualidades', 
@@ -69,8 +73,19 @@ export class IndexComponent {
   }
 
   rotateCards(section: SectionType) {
-    const imgs = this.images[section];
-    const first = imgs.shift();
-    if (first) imgs.push(first);
+    if (this.isAnimating) return;
+
+    this.isAnimating = true;
+    this.leavingIndex = 0;
+
+    setTimeout(() => {
+      const imgs = this.images[section];
+      const first = imgs.shift();
+      if (first) imgs.push(first);
+
+      this.leavingIndex = null;
+      this.isAnimating = false;
+    }, 500); // debe coincidir con el CSS
   }
+
 }

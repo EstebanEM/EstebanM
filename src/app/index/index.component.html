@@ -27,8 +27,16 @@
 
       <!-- IMÁGENES EN PILA (CARD STACK) -->
       <div class="card-stack">
-        <div class="card" *ngFor="let img of images[sections[currentSection]]; let i = index" [ngStyle]="{ 'z-index': 10 - i }" (click)="rotateCards(sections[currentSection])">
-          <img [src]="img" alt="Imagen de {{ sections[currentSection] }}">
+        <div
+          class="card"
+          *ngFor="let img of images[sections[currentSection]]; let i = index"
+          [class.active]="i === 0"
+          [class.second]="i === 1"
+          [class.third]="i === 2"
+          [class.leaving]="leavingIndex === i"
+          (click)="rotateCards(sections[currentSection])"
+        >
+          <img [src]="img" />
         </div>
       </div>
     </div>
