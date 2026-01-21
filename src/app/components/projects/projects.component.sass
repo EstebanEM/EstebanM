@@ -36,13 +36,13 @@ $graphic: #00aeff
     background: $primary-color
     max-width: 300px
 .subtittle-proyectos
-  color: $primary-color
+  color: #354431
   text-align: center
   display: flex
   align-items: center
   justify-content: center
   line-height: 1
-  font-weight: 500
+  font-weight: 900
   margin: 0 auto
   padding: 1rem 0
   @media (max-width: 768px)
@@ -107,7 +107,7 @@ $graphic: #00aeff
   img
     width: 200px
     height: auto
-    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4))
+    filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.4))
     animation: floatUp 4s ease-in-out infinite
     will-change: transform
 
@@ -119,11 +119,11 @@ $graphic: #00aeff
     100%
       transform: translateY(0)
 
-
 // ==============================
 // Título
 // ==============================
 .card__title
+  font-size: 20px
   margin: .2rem 0 0
   text-transform: uppercase
   color: $secondary-color
@@ -153,7 +153,7 @@ $graphic: #00aeff
 
   .card__btn
     border-color: rgba($backend, .6)
-    color: #FFD7A2
+    color: #ffffff
 
     &:hover
       background: rgba($backend, .15)
@@ -194,7 +194,6 @@ $graphic: #00aeff
       background: rgba(#73d0fc, .18)
       box-shadow: 0 0 12px rgba(#73d0fc, .45)
 
-
 // ==============================
 // Overlay (silencioso y premium)
 // ==============================
@@ -215,7 +214,6 @@ $graphic: #00aeff
     opacity: 0
   to
     opacity: 1
-
 
 // ==============================
 // Modal base (glass oscuro controlado)
@@ -262,7 +260,7 @@ $graphic: #00aeff
   margin-top: .25rem
   font-size: 1.65rem
   font-weight: 700
-  color: #f4f6f8
+
 
 .modal__controls
   display: flex
@@ -292,12 +290,10 @@ $graphic: #00aeff
   background: none
   border: none
   font-size: 1.7rem
-  color: rgba(#cfd6dc, .6)
   cursor: pointer
   transition: color .2s ease, transform .2s ease
 
   &:hover
-    color: #ffffff
     transform: scale(1.1)
 
 
@@ -323,7 +319,7 @@ $graphic: #00aeff
   padding-top: .3rem
 
   img
-    width: 70px
+    width: 85px
     opacity: .55
     transition: opacity .2s ease, transform .2s ease
 
@@ -335,7 +331,6 @@ $graphic: #00aeff
   display: flex
   flex-direction: column
   gap: 1.6rem
-
 
 // ==============================
 // Project / accordion (tarjeta sólida)
