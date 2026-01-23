@@ -1,45 +1,39 @@
 <!-- Proyectos-->
-<h2 class="titulo-proyectos" id="proyectos" >DESARROLLO WEB</h2>
-<h3 class="subtittle-proyectos">PROYECTOS</h3>
+<h2 class="titulo-proyectos" id="proyectos" >{{ 'PROJECTS.HEADER.TITLE' | translate }}</h2>
+<h3 class="subtittle-proyectos">{{ 'PROJECTS.HEADER.SUBTITLE' | translate }}</h3>
 
-<section class="projects"
-  style="
-    background-image: url('assets/img/wallpaper-proyect.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  "
->
+<section class="projects" style=" background-image: url('assets/img/wallpaper-proyect.webp'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+  <!-- BackEnd -->
   <article class="card card--backend">
     <div class="card__media">
       <img src="assets/img/code.webp" alt="Back-End" />
     </div>
-    <h4 class="card__title">Back-End</h4>
-    <button class="card__btn" (click)="openModal('backend')">Ver más</button>
+    <h4 class="card__title">{{ 'CARDS.BACKEND' | translate }}</h4>
+    <button class="card__btn" (click)="openModal('backend')">{{ 'CARDS.SEE_MORE' | translate }}</button>
   </article>
-
+  <!-- FrontEnd -->
   <article class="card card--frontend">
     <div class="card__media">
       <img src="assets/img/design.webp" alt="Front-End" />
     </div>
-    <h4 class="card__title">Front-End</h4>
-    <button class="card__btn" (click)="openModal('frontend')">Ver más</button>
+    <h4 class="card__title">{{ 'CARDS.FRONTEND' | translate }}</h4>
+    <button class="card__btn" (click)="openModal('frontend')">{{ 'CARDS.SEE_MORE' | translate }}</button>
   </article>
-
+  <!-- WEB Desing -->
   <article class="card card--uiux">
     <div class="card__media">
       <img src="assets/img/diseño web.png" alt="UX/UI" />
     </div>
-    <h4 class="card__title">Diseño Web</h4>
-    <button class="card__btn" (click)="openModal('uiux')">Ver más</button>
+    <h4 class="card__title">{{ 'CARDS.UIUX' | translate }}</h4>
+    <button class="card__btn" (click)="openModal('uiux')">{{ 'CARDS.SEE_MORE' | translate }}</button>
   </article>
-
+  <!-- Desing -->
   <article class="card card--graphic">
     <div class="card__media">
       <img src="assets/img/diseño grafico.png" alt="Diseño Gráfico" style="width: 95px; height: auto; transform: rotate(10deg);" />
     </div>
-    <h4 class="card__title">Diseño Gráfico</h4>
-    <button class="card__btn" (click)="openModal('graphic')">Ver más</button>
+    <h4 class="card__title">{{ 'CARDS.GRAPHIC' | translate }}</h4>
+    <button class="card__btn" (click)="openModal('graphic')">{{ 'CARDS.SEE_MORE' | translate }}</button>
   </article>
 </section>
 
@@ -49,8 +43,8 @@
     <!-- HEADER -->
     <header class="modal__header">
       <div>
-        <span class="modal__subtitle">Proyectos</span>
-        <h3 class="modal__title" style="color: #bd7df1;">Desarrollo Back-End</h3>
+        <span class="modal__subtitle">{{ 'COMMON.PROJECTS' | translate }}</span>
+        <h3 class="modal__title" style="color: #bd7df1;">{{ 'BACKEND.TITLE' | translate }}</h3>
       </div>
       <button class="modal__close" (click)="closeModal()" style="color: #bd7df1;" >×</button>
     </header>
@@ -60,15 +54,10 @@
     <section class="modal__intro">
       <div class="modal__description">
         <p>
-          He participado en el desarrollo de soluciones Back-End
-          enfocadas en la lógica de negocio, el consumo de <strong style="color: #bd7df1;">APIs</strong>  
-          y la gestión estructurada de datos en entornos productivos.
+          {{ 'BACKEND.INTRO.P1' | translate }}
         </p>
         <p>
-          Trabajo con una arquitectura clara y mantenible,
-          priorizando la escalabilidad del proyecto,
-          la validación de la información y la correcta integración
-          con el Front-End.
+          {{ 'BACKEND.INTRO.P1' | translate }}
         </p>
       </div>
 
@@ -123,11 +112,11 @@
 
             <div class="project__actions">
               <a href="assets\document\Tu-credito-directo-consultar-deuda pdf.pdf" target="_blank" rel="noopener noreferrer">
-                Ver PDF
+                {{ 'COMMON.VIEW_PDF' | translate }}
               </a>
 
               <a href="https://www.tucreditodirecto.com/consultar-deuda/" target="_blank">
-                Ver proyecto
+                {{ 'COMMON.VIEW_PROJECT' | translate }}
               </a>
             </div>
           </div>
@@ -171,10 +160,10 @@
 
             <div class="project__actions">
               <a href="assets\document\back-form-tu-credito-directo-pdf.pdf" target="_blank" rel="noopener noreferrer">
-                Ver PDF
+                {{ 'COMMON.VIEW_PDF' | translate }}
               </a>
               <a href="https://www.tucreditodirecto.com/2363-2/" target="_blank">
-                Ver implementación
+                {{ 'COMMON.VIEW_PROJECT' | translate }}
               </a>
             </div>
           </div>
@@ -358,7 +347,7 @@
             </ul>
             <div class="project__actions">
               <a href="assets\document\Front-tu-credito-directo-pdf.pdf" target="_blank" rel="noopener noreferrer">
-                Ver PDF
+                {{ 'COMMON.VIEW_PDF' | translate }}
               </a>
               <a href="https://www.tucreditodirecto.com/" target="_blank">
                 Ver proyecto
@@ -394,7 +383,7 @@
 
             <div class="project__actions">
               <a href="assets\document\SkanHawk.pdf" target="_blank" rel="noopener noreferrer">
-                Ver PDF
+                {{ 'COMMON.VIEW_PDF' | translate }}
               </a>
               <a href="https://skanhawk.com/" target="_blank">
                 Ver proyecto
