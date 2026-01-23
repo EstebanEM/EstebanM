@@ -1,0 +1,89 @@
+{
+    "HEADER": {
+        "ROLE": "Web Developer & UX/UI Designer",
+        "ABOUT": "About me",
+        "PROJECTS": "Projects",
+        "MAIL": "Email"
+    },
+
+    "HERO": {
+        "HELLO": "Hello, I'm",
+        "WELCOME": "Welcome!",
+        "INTRO": "I am Esteban Martínez, a UX/UI designer and Web Developer. Between sketches, lines of code, and a touch of creativity, I bring ideas to life that connect with people.",
+        "YOUTUBE": "Visit my",
+        "TITLE": "ART",
+            "WORDS": {
+                "DESIGN": "DESIGN",
+                "CREATIVITY": "CREATIVITY",
+                "DEVELOPMENT": "DEVELOPMENT"
+            },
+        "YOUTUBE_TITLE": "YouTube Channel"
+    },
+
+    "SKILLS": {
+        "ANGULAR": {
+            "DESCRIPTION": "Development of SPA applications with modular architecture, reusable components, and best practices."
+        },
+        "PYTHON": {
+            "DESCRIPTION": "Automation, scripting, business logic, and database integration."
+        },
+        "WORDPRESS": {
+            "DESCRIPTION": "Development of dynamic websites, custom themes, and content management."
+        },
+        "DATABASES": {
+            "TITLE": "Databases",
+            "DESCRIPTION": "Modeling, querying, and administration of MySQL databases using tools such as phpMyAdmin."
+        }
+    },
+
+    "CAROUSEL": {
+        "SECTIONS": {
+            "DRAWINGS": "Drawings",
+            "CRAFTS": "Handcrafts",
+            "MURALS": "Murals"
+        },
+        "SUBTITLE": "My best",
+        "DESCRIPTION": "Explore a selection of my highlighted {{section}}. Here you will find creativity, detail, and a lot of work made with passion.",
+        "DETAILS": {
+            "DRAWINGS": "Colored pencils, graphite, ink, oil.",
+            "CRAFTS": "Cold porcelain, modeling clay.",
+            "MURALS": "Large-scale works, vinyls, enamels, airbrush."
+        }
+    },
+    "ABOUT": {
+        "TITLE": "ABOUT ME...",
+        "TEXT": "I am Esteban Martínez, a UX/UI designer and Front-End developer. I am also a visual artist; I love drawing and bringing ideas to life through pencil and paper."
+    },
+
+    "PROJECTS": {
+        "HEADER": {
+            "TITLE": "WEB DEVELOPMENT",
+            "SUBTITLE": "PROJECTS"
+        }
+    },
+    "CARDS": {
+        "BACKEND": "Back-End",
+        "FRONTEND": "Front-End",
+        "UIUX": "Web Design",
+        "GRAPHIC": "Graphic Design",
+        "SEE_MORE": "See more"
+    },
+    "COMMON": {
+        "PROJECTS": "Projects",
+        "VIEW_PDF": "View PDF",
+        "VIEW_PROJECT": "View project",
+        "VIEW_SITE": "View site",
+        "CLOSE": "Close"
+    },
+    "BACKEND": {
+        "TITLE": "Back-End Development",
+        "INTRO": {
+            "P1": "I have participated in the development of Back-End solutions focused on business logic, API consumption, and structured data management in production environments.",
+            "P2": "I work with clear and maintainable architectures, prioritizing scalability, data validation, and proper Front-End integration."
+        }
+    }
+
+
+
+  
+}

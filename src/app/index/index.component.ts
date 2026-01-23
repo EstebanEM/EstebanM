@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-type SectionType = 'Dibujos' | 'Manualidades' | 'Murales';
+
+type SectionType = 'DRAWINGS' | 'CRAFTS' | 'MURALS';
 
 @Component({
   selector: 'app-index',
@@ -7,27 +8,24 @@ type SectionType = 'Dibujos' | 'Manualidades' | 'Murales';
   templateUrl: './index.component.html',
   styleUrl: './index.component.sass'
 })
-
-
-
 export class IndexComponent {
 
   leavingIndex: number | null = null;
   isAnimating = false;
-
+  animateInfo = false;
 
   sections: SectionType[] = [
-    'Dibujos', 
-    'Manualidades', 
-    'Murales'
+    'DRAWINGS',
+    'CRAFTS',
+    'MURALS'
   ];
+
   currentSection = 0;
-   animateInfo = false;
 
   images: Record<SectionType, string[]> = {
-    Dibujos: [
-      'https://i.pinimg.com/736x/2a/7b/87/2a7b87b2b3096891f7b3655a4a931d0c.jpg', 
-      'https://i.pinimg.com/1200x/04/6f/b8/046fb8464d1afa8fff00fa6c51ddef26.jpg', 
+    DRAWINGS: [
+      'https://i.pinimg.com/736x/2a/7b/87/2a7b87b2b3096891f7b3655a4a931d0c.jpg',
+      'https://i.pinimg.com/1200x/04/6f/b8/046fb8464d1afa8fff00fa6c51ddef26.jpg',
       'https://i.pinimg.com/736x/b7/47/f6/b747f6d3a90be2701dea907cbb31162d.jpg',
       'https://i.pinimg.com/736x/97/bc/74/97bc748fc02d8c0aad198cd89ca37dc0.jpg',
       'https://i.pinimg.com/736x/55/a8/52/55a852ff2199d20c961eec14af9840bd.jpg',
@@ -37,16 +35,18 @@ export class IndexComponent {
       'https://i.pinimg.com/736x/42/a4/dc/42a4dcce17cf131604dc0214a73651ae.jpg',
       'https://i.pinimg.com/736x/fe/77/59/fe77591586dc43fe1f59e3bfa96e5301.jpg'
     ],
-    Manualidades: [
-      'https://i.pinimg.com/1200x/4b/1f/5c/4b1f5cbeda9889838c422eb44ca5ce52.jpg', 
-      'https://i.pinimg.com/736x/99/7c/ae/997caec08b9b1302a2ca7b1861677d07.jpg', 
+
+    CRAFTS: [
+      'https://i.pinimg.com/1200x/4b/1f/5c/4b1f5cbeda9889838c422eb44ca5ce52.jpg',
+      'https://i.pinimg.com/736x/99/7c/ae/997caec08b9b1302a2ca7b1861677d07.jpg',
       'https://i.pinimg.com/736x/b2/6c/1f/b26c1f5f4af6dc1c6de0fff8c78d932d.jpg',
       'https://i.pinimg.com/736x/c4/2c/1b/c42c1b62e011f355423e309da561ef83.jpg',
       'https://i.pinimg.com/736x/56/3a/2a/563a2a8f8d63f79f9b642303f6e190ce.jpg'
     ],
-    Murales: [
-      'assets/img/cap.webp', 
-      'https://i.pinimg.com/736x/b3/dc/ed/b3dcedaf2e0c8efccff252317f3eb2c7.jpg', 
+
+    MURALS: [
+      'assets/img/cap.webp',
+      'https://i.pinimg.com/736x/b3/dc/ed/b3dcedaf2e0c8efccff252317f3eb2c7.jpg',
       'https://i.pinimg.com/736x/9f/70/3b/9f703bedc8913126addc9685212e2c8d.jpg',
       'https://i.pinimg.com/736x/b2/47/e5/b247e5237749862b904f28c9bffeeab7.jpg',
       'https://i.pinimg.com/736x/44/7b/03/447b032653bb7a2519ecd3b4c0b1d844.jpg',
@@ -55,24 +55,25 @@ export class IndexComponent {
     ]
   };
 
-  nextSection() {
+  nextSection(): void {
     this.resetInfoAnimation();
     this.currentSection = (this.currentSection + 1) % this.sections.length;
   }
 
-  prevSection() {
+  prevSection(): void {
     this.resetInfoAnimation();
-    this.currentSection = (this.currentSection - 1 + this.sections.length) % this.sections.length;
+    this.currentSection =
+      (this.currentSection - 1 + this.sections.length) % this.sections.length;
   }
 
-  resetInfoAnimation() {
+  resetInfoAnimation(): void {
     this.animateInfo = false;
     setTimeout(() => {
       this.animateInfo = true;
     }, 10);
   }
 
-  rotateCards(section: SectionType) {
+  rotateCards(section: SectionType): void {
     if (this.isAnimating) return;
 
     this.isAnimating = true;
@@ -87,5 +88,4 @@ export class IndexComponent {
       this.isAnimating = false;
     }, 500); // debe coincidir con el CSS
   }
-
 }

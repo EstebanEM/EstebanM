@@ -8,20 +8,33 @@
       <!-- INFO -->
       <div class="info" [ngClass]="{ 'animate-info': animateInfo }" >
         <h2>
-          {{ sections[currentSection] }}
+           {{ ('CAROUSEL.SECTIONS.' + sections[currentSection]) | translate }}
         </h2>
         <h3 class="subtitle">
-          Mis mejores {{ sections[currentSection].toLowerCase() }}
+          {{ 'CAROUSEL.SUBTITLE' | translate }}
+          {{
+            ('CAROUSEL.SECTIONS.' + sections[currentSection])
+              | translate
+              | lowercase
+          }}
         </h3>
         <p>
-          Explora una selección de mis {{ sections[currentSection].toLowerCase() }} destacados. 
-          Aquí encontrarás creatividad, detalle y mucho trabajo hecho con pasión.
+          {{
+            'CAROUSEL.DESCRIPTION'
+              | translate:{
+                section: (
+                  ('CAROUSEL.SECTIONS.' + sections[currentSection])
+                    | translate
+                    | lowercase
+                )
+              }
+          }}
         </p>
         <!-- Lista de detalles adicionales -->
         <ul class="info-list">
-          <li *ngIf="sections[currentSection] === 'Dibujos'">Lápices de colores, grafito, tinta, óleo.</li>
-          <li *ngIf="sections[currentSection] === 'Manualidades'">Porcelanicrón, plastilina</li>
-          <li *ngIf="sections[currentSection] === 'Murales'">Trabajos a gran escala, vinilos, esmaltes, aerógrafos.</li>
+          <li *ngIf="sections[currentSection] === 'DRAWINGS'">{{ 'CAROUSEL.DETAILS.DRAWINGS' | translate }}</li>
+          <li *ngIf="sections[currentSection] === 'DRAWINGS'">{{ 'CAROUSEL.DETAILS.CRAFTS' | translate }}</li>
+          <li *ngIf="sections[currentSection] === 'MURALS'">{{ 'CAROUSEL.DETAILS.MURALS' | translate }}</li>
         </ul>
       </div>
 

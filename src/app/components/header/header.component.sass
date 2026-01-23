@@ -63,19 +63,22 @@ $orange: #F84D2E
           transform: rotate(-45deg) translate(6px, -6px)
 
     .nav
-      ul
+      display: flex
+      align-items: center
+      gap: 2rem
+      .nav-links
         display: flex
         align-items: center
         list-style: none
-        gap: 1rem
+        gap: 1.25rem
 
         li a
           color: $primary-color
           text-decoration: none
           padding: 0.5rem
-          border-radius: 5px
+          border-radius: 6px
           font-weight: 600
-          transition: background-color 0.3s ease
+          transition: background-color .25s ease, border .25s ease
 
           display: flex
           align-items: center
@@ -85,8 +88,40 @@ $orange: #F84D2E
           &:hover
             background: $bg-presentacion
             border: 1px solid $primary-color
-            // svg path
-            //   fill: darken($primary-color, 10% )
+          .lang-switch
+            display: flex
+            gap: .5rem
+
+      .lang-switch
+        display: flex
+        align-items: center
+        gap: .4rem
+        margin-left: 1rem
+        padding-left: 1rem
+        border-left: 1px solid rgba($primary-color, .3)
+
+        button
+          background: none
+          border: none
+          padding: 0
+          cursor: pointer
+          font-weight: 600
+          font-size: .85rem
+          letter-spacing: .05em
+          color: rgba($primary-color, .5)
+          transition: color .2s ease
+
+          &:hover
+            color: $primary-color
+
+          &.active
+            color: $primary-color
+
+        .divider
+          font-size: .8rem
+          color: rgba($primary-color, .4)
+          user-select: none
+
 
 @media (max-width: 768px)
   .header-container

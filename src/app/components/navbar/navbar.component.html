@@ -6,24 +6,25 @@
     <div class="content-wrapper">
       <!-- Tarjeta de HELLO I'M-->
       <div class="hello-sticker">
-        <p class="hello-title">HELLO, I'M</p>
+        <p class="hello-title">{{ 'HERO.HELLO' | translate }}</p>
         <p class="hello-name">Esteban</p>
       </div>
       <!-- Título -->
       <div class="title-container">
-        <h1>ARTE</h1>
+        <h1>{{ 'HERO.TITLE' | translate }}</h1>
         <div id="text_dinamic"><!--Animacion texto dinamico carrucel vertical-->
           <div id="flip">
-            <div><div>DISEÑO</div></div>
-            <div><div>CREATIVIDAD</div></div>
-            <div><div>DESARROLLO</div></div>
+            <div><div>{{ 'HERO.WORDS.DESIGN' | translate }}</div></div>
+            <div><div>{{ 'HERO.WORDS.CREATIVITY' | translate }}</div></div>
+            <div><div>{{ 'HERO.WORDS.DEVELOPMENT' | translate }}</div></div>
           </div>
         </div>
         <br>
         <!--<h3>PORTAFOLIO</h3>-->
-        <p id="home"><strong>¡Bienvenido!<br>
-          Soy Esteban Martínez, <strong style="color: #FFFFFFFF;">diseñador UX/UI</strong> & <strong style="color: #FFFFFFFF;">Desarrollador Web</strong>.
-          Entre trazos, líneas de código y un toque de creatividad, doy vida a ideas que conectan con las personas.</strong>
+        <p id="home">
+          <strong>
+            {{ 'HERO.WELCOME' | translate }}<br>
+            {{ 'HERO.INTRO' | translate }}</strong>
           <!-- Icono emoji feliz :)-->
           <svg class="mask mask01" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 95.3 99">
             <clipPath id="mask1">
@@ -41,12 +42,15 @@
       <!-- Botón YouTube -->
       <div class="button-container">
         <!--Enlase e imagen-->
-        <a href="https://www.youtube.com/@EMestebanmartinez" target="_blank" title="Canal de YouTube">
+        <a href="https://www.youtube.com/@EMestebanmartinez" target="_blank" [title]="'HERO.YOUTUBE_TITLE' | translate">
           <img alt="YouTube Button" src="assets/img/avatar.webp" class="yt-avatar-button">
         </a>
         <!--Imagen de flecha e invitación-->
         <img alt="arrow" src="assets/icons/arrow.webp" class="yt-arrow-button" width="80" height="55">
-        <p class="button-info">Visita mi canal de <br><strong>YouTube</strong></p>
+        <p class="button-info">
+          {{ 'HERO.YOUTUBE' | translate }} <br>
+          <strong>YouTube</strong>
+        </p>
       </div>
     </div>
   </section>
@@ -65,8 +69,7 @@
 
         <div class="skill-content">
           <p>
-            Desarrollo de aplicaciones SPA con arquitectura modular,
-            componentes reutilizables y buenas prácticas.
+            {{ 'SKILLS.ANGULAR.DESCRIPTION' | translate }}
           </p>
         </div>
       </div>
@@ -80,8 +83,7 @@
         <div class="skill-content">
           <h4>Python</h4>
           <p>
-            Automatización, scripts, lógica de negocio y conexión con
-            bases de datos.
+            {{ 'SKILLS.PYTHON.DESCRIPTION' | translate }}
           </p>
 
         </div>
@@ -95,8 +97,7 @@
         <div class="skill-content">
           <h4>PHP · WordPress</h4>
           <p>
-            Desarrollo de sitios dinámicos, themes personalizados y
-            gestión de contenido.
+            {{ 'SKILLS.WORDPRESS.DESCRIPTION' | translate }}
           </p>
 
         </div>
@@ -108,10 +109,9 @@
         <img src="assets/img/icons/phpmyadmin-icon.webp" alt="Database logo" class="skill-icon">
 
         <div class="skill-content">
-          <h4>Bases de Datos</h4>
+          <h4>{{ 'SKILLS.DATABASES.TITLE' | translate }}</h4>
           <p>
-            Modelado, consultas y administración de bases de datos MySQL,
-            utilizando herramientas como phpMyAdmin.
+            {{ 'SKILLS.DATABASES.DESCRIPTION' | translate }}
           </p>
         </div>
       </div>

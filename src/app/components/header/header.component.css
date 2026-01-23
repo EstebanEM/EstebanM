@@ -68,29 +68,75 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.header .header-container .nav ul {
+.header .header-container .nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header .header-container .nav .nav-links {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
-.header .header-container .nav ul li a {
+.header .header-container .nav .nav-links li a {
   color: #FEBA5F;
   text-decoration: none;
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: 6px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: background-color .25s ease, border .25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
 }
 
-.header .header-container .nav ul li a:hover {
+.header .header-container .nav .nav-links li a:hover {
   background: #983C3C;
   border: 1px solid #FEBA5F;
+}
+
+.header .header-container .nav .nav-links li a .lang-switch {
+  display: flex;
+  gap: .5rem;
+}
+
+.header .header-container .nav .lang-switch {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(254, 186, 95, 0.3);
+}
+
+.header .header-container .nav .lang-switch button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: .85rem;
+  letter-spacing: .05em;
+  color: rgba(254, 186, 95, 0.5);
+  transition: color .2s ease;
+}
+
+.header .header-container .nav .lang-switch button:hover {
+  color: #FEBA5F;
+}
+
+.header .header-container .nav .lang-switch button.active {
+  color: #FEBA5F;
+}
+
+.header .header-container .nav .lang-switch .divider {
+  font-size: .8rem;
+  color: rgba(254, 186, 95, 0.4);
+  user-select: none;
 }
 
 @media (max-width: 768px) {
