@@ -1,0 +1,86 @@
+{
+    "HEADER": {
+        "ROLE": "Desarrollador Web & UX/UI Designer",
+        "ABOUT": "Sobre mí",
+        "PROJECTS": "Proyectos",
+        "MAIL": "Correo"
+        },
+
+    "HERO": {
+        "HELLO": "¡Hola! Soy",
+        "WELCOME": "¡Bienvenido!",
+        "INTRO": "Soy Esteban Martínez, diseñador UX/UI y Desarrollador Web. Entre trazos, líneas de código y un toque de creatividad, doy vida a ideas que conectan con las personas.",
+        "TITLE": "ARTE",
+            "WORDS": {
+                "DESIGN": "DISEÑO",
+                "CREATIVITY": "CREATIVIDAD",
+                "DEVELOPMENT": "DESARROLLO"
+            },
+        "YOUTUBE": "Visita mi canal de",
+        "YOUTUBE_TITLE": "Canal de YouTube"
+    },
+
+    "SKILLS": {
+        "ANGULAR": {
+            "DESCRIPTION": "Desarrollo de aplicaciones SPA con arquitectura modular, componentes reutilizables y buenas prácticas."
+        },
+        "PYTHON": {
+            "DESCRIPTION": "Automatización, scripts, lógica de negocio y conexión con bases de datos."
+        },
+        "WORDPRESS": {
+            "DESCRIPTION": "Desarrollo de sitios dinámicos, themes personalizados y gestión de contenido."
+        },
+        "DATABASES": {
+            "TITLE": "Bases de Datos",
+            "DESCRIPTION": "Modelado, consultas y administración de bases de datos MySQL, utilizando herramientas como phpMyAdmin."
+        }
+    },
+
+    "CAROUSEL": {
+        "SECTIONS": {
+            "DRAWINGS": "Dibujos",
+            "CRAFTS": "Manualidades",
+            "MURALS": "Murales"
+        },
+        "SUBTITLE": "Mis mejores",
+        "DESCRIPTION": "Explora una selección de mis {{section}} destacados. Aquí encontrarás creatividad, detalle y mucho trabajo hecho con pasión.",
+        "DETAILS": {
+            "DRAWINGS": "Lápices de colores, grafito, tinta, óleo.",
+            "CRAFTS": "Porcelanicrón, plastilina.",
+            "MURALS": "Trabajos a gran escala, vinilos, esmaltes, aerógrafos."
+        }
+    },
+
+    "ABOUT": {
+        "TITLE": "SOBRE MI...",
+        "TEXT": "Soy Esteban Martínez, diseñador UX/UI y desarrollador Front-End. También soy artista plástico; me encanta dibujar y dar vida a ideas a través del lápiz y el papel."
+    },
+
+    "PROJECTS": {
+        "HEADER": {
+            "TITLE": "DESARROLLO WEB",
+            "SUBTITLE": "PROYECTOS"
+        }
+    },
+    "CARDS": {
+        "BACKEND": "Back-End",
+        "FRONTEND": "Front-End",
+        "UIUX": "Diseño Web",
+        "GRAPHIC": "Diseño Gráfico",
+        "SEE_MORE": "Ver más"
+    },
+    "COMMON": {
+        "PROJECTS": "Proyectos",
+        "VIEW_PDF": "Ver PDF",
+        "VIEW_PROJECT": "Ver proyecto",
+        "VIEW_SITE": "Ver sitio",
+        "CLOSE": "Cerrar"
+    },
+    "BACKEND": {
+        "TITLE": "Desarrollo Back-End",
+        "INTRO": {
+            "P1": "He participado en el desarrollo de soluciones Back-End enfocadas en la lógica de negocio, el consumo de APIs y la gestión estructurada de datos en entornos productivos.",
+            "P2": "Trabajo con una arquitectura clara y mantenible, priorizando la escalabilidad del proyecto, la validación de la información y la correcta integración con el Front-End."
+        }
+    }
+}
